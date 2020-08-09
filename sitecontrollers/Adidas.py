@@ -7,6 +7,7 @@ from flask import jsonify
 import threading
 import multiprocessing
 from multiprocessing.dummy import Pool
+from selenium.webdriver.chrome.options import Options
 
 pool = Pool(10)
 
@@ -17,6 +18,11 @@ proxies = {
   'https': '37.48.118.98:13012',
 }
 
+# options = Options()
+# options.add_argument("--headless")
+
+option = webdriver.ChromeOptions()
+option.add_argument('headless')
 
 class Adidas:
     """docstring for Adisas."""
@@ -46,37 +52,38 @@ class Adidas:
         quantity = product_summary.get('quantity')
         state_name = user_details['state']
 
+        # driver = webdriver.Chrome('./chromedriver.exe', options=options)
+
+        # driver = webdriver.Chrome('./chromedriver.exe', options=option)
+        # print('Chrome Initialized with options')
+
         driver = webdriver.Chrome('./chromedriver.exe')
+        print('Chrome Initialized')
         driver.get(url)
-        wait = WebDriverWait(driver, 30)
+        print('Got Url')
+        wait = WebDriverWait(driver, 60)
+        print('Wait Initialized')
 
-        # sizes = driver.find_elements_by_xpath("//button[@class='gl-label size___2Jnft']")
-        # sizes_list = []
-        # for size in sizes:
-        #     sizes_list.append(size.text)
-        # print('sizes_list', sizes_list)
-        # time.sleep(0.3)
-
-        # if driver.find_element_by_xpath("//div[@class='scarcity-message___XH8G2']"):
-        #     scarcity_message = driver.find_element_by_xpath("//div[@class='scarcity-message___XH8G2']")
-        #     return_message = 'Scarcity_Message: ' + scarcity_message.text
-        # else:
-        #     return_message = 'Scarcity_Message: No Message'
-
-        selected_size = driver.find_element_by_xpath("//button[@class='gl-label size___2Jnft']/span[text()={}]".format(size))
+        # selected_size = driver.find_element_by_xpath("//button[@class='gl-label size___2Jnft']/span[text()={}]".format(size))
+        selected_size = wait.until(EC.presence_of_element_located((By.XPATH, "//button[@class='gl-label size___2Jnft']/span[text()={}]".format(size))))
         selected_size.click()
+        print('Size Selected')
 
         addtobag = driver.find_element_by_xpath("//button[@class='gl-cta gl-cta--primary gl-cta--full-width']")
         addtobag.click()
+        print('Added to Bag')
 
         viewbag = wait.until(EC.presence_of_element_located((By.XPATH, "//a[@class='gl-cta gl-cta--primary gl-cta--full-width gl-vspace']")))
         viewbag.click()
+        print('Bag Viewed')
 
         quantity = wait.until(EC.presence_of_element_located((By.XPATH, "//select[@class='gl-dropdown-custom__select-element']/option[text()={}]".format(quantity))))
         quantity.click()
+        print('Quntity Selected')
 
         checkout = wait.until(EC.presence_of_element_located((By.XPATH, "//div[@class='checkout-actions__button-wrapper___cUBs-']")))
         checkout.click()
+        print('Checked out')
 
         time.sleep(0.3)
         wait.until(EC.presence_of_element_located((By.NAME, 'firstName'))).send_keys(user_details['first_name'])
@@ -97,57 +104,11 @@ class Adidas:
         time.sleep(0.3)
         driver.find_element_by_name('emailAddress').send_keys(user_details['email'])
         time.sleep(0.3)
-
-        # review_and_pay = driver.find_element_by_xpath("//div[@class='col-m-12 col-s-12 gl-vspace-bpall-medium']")
-        # review_and_pay = driver.find_element_by_xpath("//button[@class='gl-cta gl-cta--primary gl-cta--full-width']")
-        review_and_pay = driver.find_element_by_xpath("//span[@class='gl-cta__content']")
-
+        print('The End')
+        review_and_pay = driver.find_element_by_xpath("//button/span[(text()='Review and Pay')]")
         review_and_pay.click()
+
         time.sleep(300)
 
         # return return_message
         # return 'No Message'
-
-
-    def checkout(self, driver):
-        thread = threading.Thread(target=self.provide_size)
-        thread.start
-
-      # thread.join()
-        while product_size is None:
-            time.sleep(15)
-
-        driver.find_element_by_xpath('//button/span[contains(text(), product_size)]').click()
-
-        if driver.find_element_by_xpath("//div[@class='scarcity-message___XH8G2']"):
-            scarcity_message = driver.find_element_by_xpath("//div[@class='scarcity-message___XH8G2']")
-            print('Scarcity_Message: ', scarcity_message.text)
-        else:
-            print('Scarcity_Message: ', 'No Message')
-
-
-    def provide_size(self, size):
-        # self.product_size = size
-        global product_size
-        product_size = size
-
-        return product_size
-
-
-    def check_stock(self, url):
-        headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)'
-            'Chrome/83.0.4103.116 Safari/537.36'}
-        # res = requests.get(url, headers=header)
-        res = requests.get(url, headers=headers)
-        # res = requests.get(url, headers=headers, proxies=proxies)
-        page = BeautifulSoup(res.text, 'html.parser')
-        list_of_sizes_raw = page.find_all('span', class_='c-form-label-content')
-        for size in list_of_sizes_raw:
-            if size == 'Qty*':
-                break
-            print(size.text)
-
-
-    def start(self, model_name, product_id):
-        url = generate_url(model_name, product_id)
-        check_stock(url)
