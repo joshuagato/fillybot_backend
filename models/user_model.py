@@ -1,5 +1,4 @@
 from utilities.flask_configs import db, ma
-import datetime as dt
 
 # User Model
 class User(db.Model):
