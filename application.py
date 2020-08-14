@@ -7,7 +7,6 @@ from sqlalchemy import desc
 pymysql.install_as_MySQLdb()
 
 from sitecontrollers.Adidas import Adidas
-# from utilities.jsonwebtoken import verify_token
 
 from models.profile_model import Profile, profile_schema, profiles_schema
 from models.task_model import Task, task_schema, tasks_schema
