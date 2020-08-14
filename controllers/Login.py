@@ -1,6 +1,6 @@
 from utilities.flask_configs import Resource, request, jsonify, bcrypt
-import jwt
 from models.user_model import User, user_schema, users_schema
+# import jwt
 
 class Login(Resource):
     def post(self):
@@ -18,4 +18,7 @@ class Login(Resource):
                 if not bcrypt.check_password_hash(hashed_password, password):
                     return jsonify({'success': False, 'message': 'Check your username or password'});
 
+        # token = jwt.encode({'user': user_schema.dump(matched_user)}, 'supersecretivesecret', algorithm='HS256')
+
+        # return jsonify({'success': True, 'user': user_schema.dump(matched_user), 'token': token.decode()})
         return jsonify({'success': True, 'user': user_schema.dump(matched_user)})
