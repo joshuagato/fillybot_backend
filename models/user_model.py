@@ -9,7 +9,6 @@ class User(db.Model):
     email = db.Column(db.String(120))
     password = db.Column(db.String(120))
 
-
     def __init__(self, firstname, lastname, email, password):
         self.firstname = firstname
         self.lastname = lastname

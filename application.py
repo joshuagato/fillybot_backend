@@ -11,6 +11,7 @@ from utilities.jsonwebtoken import verify_token
 
 from models.profile_model import Profile, profile_schema, profiles_schema
 from models.task_model import Task, task_schema, tasks_schema
+from models.user_model import User, users_schema, users_schema
 
 CORS(app)
 
