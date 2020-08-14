@@ -18,7 +18,4 @@ class Login(Resource):
                 if not bcrypt.check_password_hash(hashed_password, password):
                     return jsonify({'success': False, 'message': 'Check your username or password'});
 
-        # token = jwt.encode({'user': user_schema.dump(matched_user)}, 'supersecretivesecret', algorithm='HS256')
-
-        # return jsonify({'success': True, 'user': user_schema.dump(matched_user), 'token': token.decode()})
         return jsonify({'success': True, 'user': user_schema.dump(matched_user)})
