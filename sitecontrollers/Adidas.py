@@ -8,6 +8,7 @@ import threading
 import multiprocessing
 from multiprocessing.dummy import Pool
 from selenium.webdriver.chrome.options import Options
+from webdriver_manager.chrome import ChromeDriverManager
 
 pool = Pool(10)
 
@@ -21,8 +22,8 @@ proxies = {
 # options = Options()
 # options.add_argument("--headless")
 
-option = webdriver.ChromeOptions()
-option.add_argument('headless')
+# option = webdriver.ChromeOptions()
+# option.add_argument('headless')
 
 class Adidas:
     """docstring for Adisas."""
@@ -57,7 +58,8 @@ class Adidas:
         # driver = webdriver.Chrome('./chromedriver.exe', options=option)
         # print('Chrome Initialized with options')
 
-        driver = webdriver.Chrome('./chromedriver.exe')
+        # driver = webdriver.Chrome('./chromedriver.exe')
+        driver = webdriver.Chrome(ChromeDriverManager().install())
         print('Chrome Initialized')
         driver.get(url)
         print('Got Url')
