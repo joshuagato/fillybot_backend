@@ -9,6 +9,7 @@ import multiprocessing
 from multiprocessing.dummy import Pool
 from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
+# from webdriver_manager.utils import ChromeType
 
 pool = Pool(10)
 
@@ -60,6 +61,7 @@ class Adidas:
 
         # driver = webdriver.Chrome('./chromedriver.exe')
         driver = webdriver.Chrome(ChromeDriverManager().install())
+        # driver = webdriver.Chrome(ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install())
         print('Chrome Initialized')
         driver.get(url)
         print('Got Url')
