@@ -60,7 +60,8 @@ class Adidas:
         # print('Chrome Initialized with options')
 
         # driver = webdriver.Chrome('./chromedriver.exe')
-        driver = webdriver.Chrome(ChromeDriverManager().install())
+        driver = webdriver.Chrome()
+        # driver = webdriver.Chrome(ChromeDriverManager().install())
         # driver = webdriver.Chrome(ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install())
         print('Chrome Initialized')
         driver.get(url)
