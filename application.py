@@ -7,6 +7,7 @@ from sqlalchemy import desc
 pymysql.install_as_MySQLdb()
 
 from sitecontrollers.Adidas import Adidas
+from sitecontrollers.Eastbay import Eastbay
 
 from models.profile_model import Profile, profile_schema, profiles_schema
 from models.task_model import Task, task_schema, tasks_schema
@@ -22,6 +23,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db.create_all()
 adidas = Adidas()
+eastbay = Eastbay()
 
 from controllers.Register import Register
 from controllers.Login import Login
@@ -59,7 +61,7 @@ def get_tasks(id):
 
 
 @app.route('/adidas', methods=['POST'])
-def fetch_url():
+def purchase_adidas():
     if request.method == 'POST':
         if request.is_json:
             product_details = {
@@ -71,10 +73,35 @@ def fetch_url():
                 'first_name': request.json['firstname'], 'last_name': request.json['lastname'],
                 'address': request.json['address'], 'city': request.json['city'],
                 'state': request.json['state'] , 'zipcode': request.json['zipcode'],
-                'phone': request.json['phone'],'email': request.json['email'],
+                'phone': request.json['phone'], 'email': request.json['email'],
+                'card_number': request.json['card_number'], 'card_holder': request.json['card_name'],
+                'card_expiry': request.json['card_expiry'], 'card_cvv': request.json['card_cvv'],
             }
 
     message = adidas.generate_url(product_details, user_details)
+    response = {'message': message}
+    return jsonify(response), 200
+
+
+@app.route('/eastbay', methods=['POST'])
+def purchase_eastbay():
+    if request.method == 'POST':
+        if request.is_json:
+            product_details = {
+                'product_name': request.json['prod_name'], 'product_number': request.json['prod_number'],
+                'product_size': request.json['prod_size'], 'product_quantity': request.json['prod_qty']
+            }
+
+            user_details = {
+                'first_name': request.json['firstname'], 'last_name': request.json['lastname'],
+                'address': request.json['address'], 'city': request.json['city'],
+                'state': request.json['state'] , 'zipcode': request.json['zipcode'],
+                'phone': request.json['phone'], 'email': request.json['email'],
+                'card_number': request.json['card_number'], 'card_holder': request.json['card_name'],
+                'card_expiry': request.json['card_expiry'], 'card_cvv': request.json['card_cvv'],
+            }
+
+    message = eastbay.generate_url(product_details, user_details)
     response = {'message': message}
     return jsonify(response), 200
 

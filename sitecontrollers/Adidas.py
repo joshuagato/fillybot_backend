@@ -10,6 +10,7 @@ from multiprocessing.dummy import Pool
 from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 # from webdriver_manager.utils import ChromeType
+from selenium.webdriver.common.keys import Keys
 
 pool = Pool(10)
 
@@ -26,11 +27,21 @@ proxies = {
 # option = webdriver.ChromeOptions()
 # option.add_argument('headless')
 
+# options = Options()
+# options.add_argument("--headless")
+# options.add_argument("window-size=1400,1500")
+# options.add_argument("--disable-gpu")
+# options.add_argument("--no-sandbox")
+# options.add_argument("start-maximized")
+# options.add_argument("enable-automation")
+# options.add_argument("--disable-infobars")
+# options.add_argument("--disable-dev-shm-usage")
+
+
 class Adidas:
     """docstring for Adisas."""
     def generate_url(self, product_details, user_details):
         product_name = product_details.get('product_name').lower().replace(' ', '-').replace('_', '-')
-        # derived_url = 'https://www.eastbay.com/product/' + model_name + '/' + product_id + '.html'
 
         derived_url = 'https://www.adidas.com/us/' + product_name + '/' + product_details['product_number'] + '.html'
         product_size = product_details.get('product_size')
@@ -60,17 +71,22 @@ class Adidas:
         # print('Chrome Initialized with options')
 
         # driver = webdriver.Chrome('./chromedriver.exe')
-        driver = webdriver.Chrome()
-        # driver = webdriver.Chrome(ChromeDriverManager().install())
+        # driver = webdriver.Chrome('./chromedriver')
+        # driver = webdriver.Chrome(options=options)
+        # driver = webdriver.Chrome()
+        # driver = webdriver.Chrome('/usr/bin/chromedriver')
+        # driver = webdriver.Chrome('/usr/local/bin/chromedriver')
+        # driver = webdriver.Chrome(executable_path='/usr/local/bin/chromedriver')
+        driver = webdriver.Chrome(ChromeDriverManager().install())
         # driver = webdriver.Chrome(ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install())
         print('Chrome Initialized')
         driver.get(url)
         print('Got Url')
-        wait = WebDriverWait(driver, 60)
+        wait = WebDriverWait(driver, 20)
         print('Wait Initialized')
 
-        # selected_size = driver.find_element_by_xpath("//button[@class='gl-label size___2Jnft']/span[text()={}]".format(size))
-        selected_size = wait.until(EC.presence_of_element_located((By.XPATH, "//button[@class='gl-label size___2Jnft']/span[text()={}]".format(size))))
+        print('size', size)
+        selected_size = wait.until(EC.presence_of_element_located((By.XPATH, "//button/span[text()='{}']".format(size))))
         selected_size.click()
         print('Size Selected')
 
@@ -82,11 +98,13 @@ class Adidas:
         viewbag.click()
         print('Bag Viewed')
 
-        quantity = wait.until(EC.presence_of_element_located((By.XPATH, "//select[@class='gl-dropdown-custom__select-element']/option[text()={}]".format(quantity))))
+        wait_for_size = WebDriverWait(driver, 40)
+        quantity = wait_for_size.until(EC.presence_of_element_located((By.XPATH, "//select/option[text()='{}']".format(quantity))))
         quantity.click()
         print('Quntity Selected')
 
-        checkout = wait.until(EC.presence_of_element_located((By.XPATH, "//div[@class='checkout-actions__button-wrapper___cUBs-']")))
+
+        checkout = wait.until(EC.presence_of_element_located((By.XPATH, "//div[@class='checkout-actions__button-wrapper___2zgj3']")))
         checkout.click()
         print('Checked out')
 
@@ -113,7 +131,32 @@ class Adidas:
         review_and_pay = driver.find_element_by_xpath("//button/span[(text()='Review and Pay')]")
         review_and_pay.click()
 
-        time.sleep(300)
+        # Place the order
+        time.sleep(1)
+        card_number = wait.until(EC.presence_of_element_located((By.NAME, 'card.number')))
+        card_number.send_keys(user_details['card_number'])
+        time.sleep(0.3)
+        card_holder = wait.until(EC.presence_of_element_located((By.NAME, 'card.holder')))
+        card_holder.send_keys(Keys.BACKSPACE * 100)
+        card_holder.send_keys(user_details['card_holder'])
+        time.sleep(0.3)
+        driver.find_element_by_xpath("//input[@data-auto-id='expiry-date-field']").send_keys(user_details['card_expiry'])
+        time.sleep(0.3)
+        driver.find_element_by_name('card.cvv').send_keys(user_details['card_cvv'])
+        time.sleep(0.3)
+        pay = driver.find_element_by_xpath("//button[@class='gl-cta gl-cta--primary gl-cta--full-width order-button___2AFtM gl-vspace-bpall-medium']")
+        pay.click()
+        time.sleep(0.3)
+        wait_for_continue_button = WebDriverWait(driver, 120)
+        wait_for_continue_button.until(EC.presence_of_element_located((By.ID, 'ContinueButton'))).click()
+        time.sleep(3000)
+
+        # time.sleep(0.3)
+        # wait.until(EC.presence_of_element_located((By.NAME, 'card.cvv'))).send_keys(user_details['last_name'])
+        #
+        # addtobag = driver.find_element_by_xpath("//button[@class='gl-cta gl-cta--primary gl-cta--full-width']")
+        # addtobag.click()
+        # print('Added to Bag')
 
         # return return_message
         # return 'No Message'

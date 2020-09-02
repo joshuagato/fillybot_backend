@@ -15,8 +15,12 @@ class AddProfile(Resource):
                 zipcode = request.json['zipcode']
                 phone = request.json['phone']
                 email = request.json['email']
+                card_number = request.json['card_number']
+                card_name = request.json['card_name']
+                card_expiry = request.json['card_expiry']
+                card_cvv = request.json['card_cvv']
 
-        new_profile = Profile(user, profile_name, firstname, lastname, address, city, state, zipcode, phone, email)
+        new_profile = Profile(user, profile_name, firstname, lastname, address, city, state, zipcode, phone, email, card_number, card_name, card_expiry, card_cvv)
         db.session.add(new_profile)
         db.session.commit()
         data = {'success': True, 'schema': profile_schema.dump(new_profile)}
