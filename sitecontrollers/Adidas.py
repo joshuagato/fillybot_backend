@@ -39,124 +39,129 @@ proxies = {
 
 
 class Adidas:
-    """docstring for Adisas."""
-    def generate_url(self, product_details, user_details):
-        product_name = product_details.get('product_name').lower().replace(' ', '-').replace('_', '-')
+  """docstring for Adisas."""
 
-        derived_url = 'https://www.adidas.com/us/' + product_name + '/' + product_details['product_number'] + '.html'
-        product_size = product_details.get('product_size')
-        product_quantity = product_details.get('product_quantity')
+  def generate_url(self, product_details, user_details):
+    product_name = product_details.get('product_name').lower().replace(' ', '-').replace('_', '-')
 
-        product_summary = {
-            'url': derived_url, 'size': product_size, 'quantity': product_quantity
-        }
+    derived_url = 'https://www.adidas.com/us/' + product_name + '/' + product_details['product_number'] + '.html'
+    product_size = product_details.get('product_size')
+    product_quantity = product_details.get('product_quantity')
 
-        # return self.get_product_page(product_summary, user_details)
-        self.get_product_page(product_summary, user_details)
+    product_summary = {
+      'url': derived_url, 'size': product_size, 'quantity': product_quantity
+    }
 
-        # purchase = pool.apply_async(self.get_product_page, args=(product_summary, user_details))
-        # return multiprocessing.cpu_count()
+    # return self.get_product_page(product_summary, user_details)
+    self.get_product_page(product_summary, user_details)
 
-
-    def get_product_page(self, product_summary, user_details):
-        # return_message = ''
-        url = product_summary.get('url')
-        size = product_summary.get('size')
-        quantity = product_summary.get('quantity')
-        state_name = user_details['state']
-
-        # driver = webdriver.Chrome('./chromedriver.exe', options=options)
-
-        # driver = webdriver.Chrome('./chromedriver.exe', options=option)
-        # print('Chrome Initialized with options')
-
-        # driver = webdriver.Chrome('./chromedriver.exe')
-        # driver = webdriver.Chrome('./chromedriver')
-        # driver = webdriver.Chrome(options=options)
-        # driver = webdriver.Chrome()
-        # driver = webdriver.Chrome('/usr/bin/chromedriver')
-        # driver = webdriver.Chrome('/usr/local/bin/chromedriver')
-        # driver = webdriver.Chrome(executable_path='/usr/local/bin/chromedriver')
-        driver = webdriver.Chrome(ChromeDriverManager().install())
-        # driver = webdriver.Chrome(ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install())
-        print('Chrome Initialized')
-        driver.get(url)
-        print('Got Url')
-        wait = WebDriverWait(driver, 20)
-        print('Wait Initialized')
-
-        print('size', size)
-        selected_size = wait.until(EC.presence_of_element_located((By.XPATH, "//button/span[text()='{}']".format(size))))
-        selected_size.click()
-        print('Size Selected')
-
-        addtobag = driver.find_element_by_xpath("//button[@class='gl-cta gl-cta--primary gl-cta--full-width']")
-        addtobag.click()
-        print('Added to Bag')
-
-        viewbag = wait.until(EC.presence_of_element_located((By.XPATH, "//a[@class='gl-cta gl-cta--primary gl-cta--full-width gl-vspace']")))
-        viewbag.click()
-        print('Bag Viewed')
-
-        wait_for_size = WebDriverWait(driver, 40)
-        quantity = wait_for_size.until(EC.presence_of_element_located((By.XPATH, "//select/option[text()='{}']".format(quantity))))
-        quantity.click()
-        print('Quntity Selected')
+    # purchase = pool.apply_async(self.get_product_page, args=(product_summary, user_details))
+    # return multiprocessing.cpu_count()
 
 
-        checkout = wait.until(EC.presence_of_element_located((By.XPATH, "//div[@class='checkout-actions__button-wrapper___2zgj3']")))
-        checkout.click()
-        print('Checked out')
+  def get_product_page(self, product_summary, user_details):
+    # return_message = ''
+    url = product_summary.get('url')
+    size = product_summary.get('size')
+    quantity = product_summary.get('quantity')
+    state_name = user_details['state']
+    address = "{} {}".format(user_details['address_1'], user_details['address_2'])
 
-        time.sleep(0.3)
-        wait.until(EC.presence_of_element_located((By.NAME, 'firstName'))).send_keys(user_details['first_name'])
-        time.sleep(0.3)
-        wait.until(EC.presence_of_element_located((By.NAME, 'lastName'))).send_keys(user_details['last_name'])
-        time.sleep(0.3)
-        driver.find_element_by_name('address1').send_keys(user_details['address'])
-        time.sleep(0.3)
-        driver.find_element_by_name('city').send_keys(user_details['city'])
-        time.sleep(0.3)
-        state = driver.find_element_by_xpath("//select/option[(text()='{}')]".format(state_name))
-        # state = driver.find_element_by_xpath("//select/option[contains(text(), '{}')]".format(state_name))
-        state.click()
-        time.sleep(0.3)
-        driver.find_element_by_name('zipcode').send_keys(user_details['zipcode'])
-        time.sleep(0.3)
-        driver.find_element_by_name('phoneNumber').send_keys(user_details['phone'])
-        time.sleep(0.3)
-        driver.find_element_by_name('emailAddress').send_keys(user_details['email'])
-        time.sleep(0.3)
-        print('The End')
-        review_and_pay = driver.find_element_by_xpath("//button/span[(text()='Review and Pay')]")
-        review_and_pay.click()
+    # driver = webdriver.Chrome('./chromedriver.exe', options=options)
 
-        # Place the order
-        time.sleep(1)
-        card_number = wait.until(EC.presence_of_element_located((By.NAME, 'card.number')))
-        card_number.send_keys(user_details['card_number'])
-        time.sleep(0.3)
-        card_holder = wait.until(EC.presence_of_element_located((By.NAME, 'card.holder')))
-        card_holder.send_keys(Keys.BACKSPACE * 100)
-        card_holder.send_keys(user_details['card_holder'])
-        time.sleep(0.3)
-        driver.find_element_by_xpath("//input[@data-auto-id='expiry-date-field']").send_keys(user_details['card_expiry'])
-        time.sleep(0.3)
-        driver.find_element_by_name('card.cvv').send_keys(user_details['card_cvv'])
-        time.sleep(0.3)
-        pay = driver.find_element_by_xpath("//button[@class='gl-cta gl-cta--primary gl-cta--full-width order-button___2AFtM gl-vspace-bpall-medium']")
-        pay.click()
-        time.sleep(0.3)
-        wait_for_continue_button = WebDriverWait(driver, 120)
-        wait_for_continue_button.until(EC.presence_of_element_located((By.ID, 'ContinueButton'))).click()
-        time.sleep(3000)
+    # driver = webdriver.Chrome('./chromedriver.exe', options=option)
+    # print('Chrome Initialized with options')
 
-        # time.sleep(0.3)
-        # wait.until(EC.presence_of_element_located((By.NAME, 'card.cvv'))).send_keys(user_details['last_name'])
-        #
-        # addtobag = driver.find_element_by_xpath("//button[@class='gl-cta gl-cta--primary gl-cta--full-width']")
-        # addtobag.click()
-        # print('Added to Bag')
+    # driver = webdriver.Chrome('./chromedriver.exe')
+    # driver = webdriver.Chrome('./chromedriver')
+    # driver = webdriver.Chrome(options=options)
+    # driver = webdriver.Chrome()
+    # driver = webdriver.Chrome('/usr/bin/chromedriver')
+    # driver = webdriver.Chrome('/usr/local/bin/chromedriver')
+    # driver = webdriver.Chrome(executable_path='/usr/local/bin/chromedriver')
+    driver = webdriver.Chrome(ChromeDriverManager().install())
+    # driver = webdriver.Chrome(ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install())
+    print('Chrome Initialized')
+    driver.get(url)
+    print('Got Url')
+    wait = WebDriverWait(driver, 20)
+    print('Wait Initialized')
 
-        # return return_message
-        # return 'No Message'
+    print('size', size)
+    selected_size = wait.until(EC.presence_of_element_located((By.XPATH, "//button/span[text()='{}']".format(size))))
+    selected_size.click()
+    print('Size Selected')
+
+    addtobag = driver.find_element_by_xpath("//button[@class='gl-cta gl-cta--primary gl-cta--full-width']")
+    addtobag.click()
+    print('Added to Bag')
+
+    viewbag = wait.until(EC.presence_of_element_located((By.XPATH, "//a[@class='gl-cta gl-cta--primary gl-cta--full-width gl-vspace']")))
+    viewbag.click()
+    print('Bag Viewed')
+
+    wait_for_size = WebDriverWait(driver, 40)
+    quantity = wait_for_size.until(EC.presence_of_element_located((By.XPATH, "//select/option[text()='{}']".format(quantity))))
+    quantity.click()
+    print('Quntity Selected')
+
+
+    checkout = wait.until(EC.presence_of_element_located((By.XPATH, "//div[@class='checkout-actions__button-wrapper___2zgj3']")))
+    checkout.click()
+    print('Checked out')
+
+    time.sleep(1)
+    wait.until(EC.presence_of_element_located((By.NAME, 'firstName'))).send_keys(user_details['first_name'])
+    time.sleep(0.3)
+    wait.until(EC.presence_of_element_located((By.NAME, 'lastName'))).send_keys(user_details['last_name'])
+    time.sleep(0.3)
+    driver.find_element_by_name('address1').send_keys(address)
+    time.sleep(0.3)
+    driver.find_element_by_name('city').send_keys(user_details['city'])
+    time.sleep(0.3)
+    state = driver.find_element_by_xpath("//select/option[(text()='{}')]".format(state_name))
+    # state = driver.find_element_by_xpath("//select/option[contains(text(), '{}')]".format(state_name))
+    state.click()
+    time.sleep(0.3)
+    driver.find_element_by_name('zipcode').send_keys(user_details['zipcode'])
+    time.sleep(0.3)
+    driver.find_element_by_name('phoneNumber').send_keys(user_details['phone'])
+    time.sleep(0.3)
+    driver.find_element_by_name('emailAddress').send_keys(user_details['email'])
+    time.sleep(0.3)
+    print('Address Details Provided')
+    review_and_pay = driver.find_element_by_xpath("//button/span[(text()='Review and Pay')]")
+    review_and_pay.click()
+    print('Review and Pay Clicked')
+    # Place the order
+    time.sleep(1)
+    card_number = wait.until(EC.presence_of_element_located((By.NAME, 'card.number')))
+    card_number.send_keys(user_details['card_number'])
+    time.sleep(0.3)
+    card_holder = wait.until(EC.presence_of_element_located((By.NAME, 'card.holder')))
+    card_holder.send_keys(Keys.BACKSPACE * 100)
+    card_holder.send_keys(user_details['card_holder'])
+    time.sleep(0.3)
+    driver.find_element_by_xpath("//input[@data-auto-id='expiry-date-field']").send_keys(user_details['card_expiry'])
+    time.sleep(0.3)
+    driver.find_element_by_name('card.cvv').send_keys(user_details['card_cvv'])
+    time.sleep(0.3)
+    print('card Details Provided')
+    pay = driver.find_element_by_xpath("//button[@class='gl-cta gl-cta--primary gl-cta--full-width order-button___2AFtM gl-vspace-bpall-medium']")
+    pay.click()
+    time.sleep(0.3)
+    print('Review and Pay Clicked')
+    wait_for_continue_button = WebDriverWait(driver, 120)
+    wait_for_continue_button.until(EC.presence_of_element_located((By.ID, 'ContinueButton'))).click()
+
+    time.sleep(3000)
+
+    # time.sleep(0.3)
+    # wait.until(EC.presence_of_element_located((By.NAME, 'card.cvv'))).send_keys(user_details['last_name'])
+    #
+    # addtobag = driver.find_element_by_xpath("//button[@class='gl-cta gl-cta--primary gl-cta--full-width']")
+    # addtobag.click()
+    # print('Added to Bag')
+
+    # return return_message
+    # return 'No Message'

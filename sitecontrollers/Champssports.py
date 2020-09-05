@@ -38,20 +38,18 @@ proxies = {
 # options.add_argument("--disable-dev-shm-usage")
 
 
-class Eastbay:
-  """docstring for Eastbay."""
-  
+class Champssports:
+  """docstring for Champssports."""
+
   def generate_url(self, product_details, user_details):
     product_name = product_details.get('product_name').lower().replace("'", '').replace(' ', '-').replace('_', '-')
-    # https://www.eastbay.com/product/~/D5008600.html
-    # https://www.eastbay.com/product/nike-air-max-97-mens/W5584100.html
 
-    derived_url = 'https://www.eastbay.com/product/' + product_name + '/' + product_details['product_number'] + '.html'
+    derived_url = 'https://www.champssports.com/product/' + product_name + '/' + product_details['product_number'] + '.html'
     product_size = product_details.get('product_size')
     product_quantity = product_details.get('product_quantity')
 
     product_summary = {
-        'url': derived_url, 'size': product_size, 'quantity': product_quantity
+      'url': derived_url, 'size': product_size, 'quantity': product_quantity
     }
 
     # return self.get_product_page(product_summary, user_details)
@@ -61,7 +59,7 @@ class Eastbay:
     # return multiprocessing.cpu_count()
 
 
-  def get_product_page(self, product_summary, user_details):
+    def get_product_page(self, product_summary, user_details):
       # return_message = ''
       url = product_summary.get('url')
       size = product_summary.get('size')
@@ -95,7 +93,7 @@ class Eastbay:
           #close_button = wait.until(EC.presence_of_element_located((By.XPATH, "//button[@class='IconButton c-modal__close']")))
           print('close_button', close_button)
         except:
-          print('No modal')
+            print('No modal')
 
 
       def close_stylish_modal():
@@ -124,7 +122,7 @@ class Eastbay:
           error_message = driver.find_element_by_xpath("//h1[text()='429 Too Many Requests']")
           print('error_message', error_message)
           if error_message:
-              driver.refresh()
+            driver.refresh()
           #WebDriverWait(driver, 5).until(EC.presence_of_element_located(By.XPATH, "//h2[text()='429 Too Many Requests']"))
         except:
           error_message = ''
@@ -155,19 +153,19 @@ class Eastbay:
       size.click()
       print('Size Selected')
 
-      close_all_modals()
+      # qty = wait.until(EC.presence_of_element_located((By.ID, "input_tel_quantity")))
+      # qty.send_keys(Keys.BACKSPACE)
+      # qty.send_keys(quantity)
+      # print('Quntity Typed')
 
-      qty = wait.until(EC.presence_of_element_located((By.ID, "input_tel_quantity")))
-      qty.send_keys(Keys.BACKSPACE)
-      qty.send_keys(quantity)
-      print('Quntity Typed')
+      # close_all_modals()
 
-      try:
-        size_again = driver.find_element_by_xpath.click("//div[@class='c-form-field c-form-field--radio ProductSize']/label/span[text()='{}']".format(size))
-        size_again.click()
-        print('Size Selected Again')
-      except:
-        print('NO: Size Selected Again')
+      # try:
+      #     size_again = driver.find_element_by_xpath.click("//div[@class='c-form-field c-form-field--radio ProductSize']/label/span[text()='{}']".format(size))
+      #     size_again.click()
+      #     print('Size Selected Again')
+      # except:
+      #     print('NO: Size Selected Again')
 
 
       close_all_modals()
