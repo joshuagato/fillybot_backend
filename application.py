@@ -24,10 +24,10 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:@localhost/fillybot'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db.create_all()
-adidas = Adidas()
-eastbay = Eastbay()
-footlocker = Footlocker()
-champssports = Champssports()
+# adidas = Adidas()
+# eastbay = Eastbay()
+# footlocker = Footlocker()
+# champssports = Champssports()
 
 from controllers.Register import Register
 from controllers.Login import Login
@@ -36,6 +36,10 @@ from controllers.AddTask import AddTask
 from controllers.DeleteTask import DeleteTask
 from controllers.UpdateProfile import UpdateProfile
 from controllers.DeleteProfile import DeleteProfile
+from controllers.PurchaseAdidas import PurchaseAdidas
+from controllers.PurchaseEastbay import PurchaseEastbay
+from controllers.PurchaseFootlocker import PurchaseFootlocker
+from controllers.PurchaseChampssports import PurchaseChampssports
 
 api.add_resource(Register, '/register')
 api.add_resource(Login, '/login')
@@ -44,6 +48,10 @@ api.add_resource(AddTask, '/addtask')
 api.add_resource(DeleteTask, '/deletetask/<string:id>')
 api.add_resource(UpdateProfile, '/updateprofile/<string:id>')
 api.add_resource(DeleteProfile, '/deleteprofile/<string:id>')
+api.add_resource(PurchaseAdidas, '/adidas')
+api.add_resource(PurchaseEastbay, '/eastbay')
+api.add_resource(PurchaseFootlocker, '/footlocker')
+api.add_resource(PurchaseChampssports, '/champssports')
 
 @app.route('/', methods=['GET'])
 def hello_world():
@@ -62,98 +70,6 @@ def get_tasks(id):
   all_tasks = Task.query.filter_by(user=id).order_by(Task.id.desc()).all()
   tasks = tasks_schema.dump(all_tasks)
   return jsonify({ 'success': True, 'tasks': tasks }), 200
-
-
-@app.route('/adidas', methods=['POST'])
-def purchase_adidas():
-  if request.method == 'POST':
-    if request.is_json:
-      product_details = {
-        'product_name': request.json['prod_name'], 'product_number': request.json['prod_number'],
-        'product_size': request.json['prod_size'], 'product_quantity': request.json['prod_qty']
-      }
-
-      user_details = {
-        'first_name': request.json['firstname'], 'last_name': request.json['lastname'],
-        'address_1': request.json['address_1'], 'address_2': request.json['address_2'], 'city': request.json['city'],
-        'state': request.json['state'] , 'zipcode': request.json['zipcode'],
-        'phone': request.json['phone'], 'email': request.json['email'],
-        'card_number': request.json['card_number'], 'card_holder': request.json['card_name'],
-        'card_expiry': request.json['card_expiry'], 'card_cvv': request.json['card_cvv'],
-      }
-
-  message = adidas.generate_url(product_details, user_details)
-  response = {'message': message}
-  return jsonify(response), 200
-
-
-@app.route('/eastbay', methods=['POST'])
-def purchase_eastbay():
-  if request.method == 'POST':
-    if request.is_json:
-      product_details = {
-        'product_name': request.json['prod_name'], 'product_number': request.json['prod_number'],
-        'product_size': request.json['prod_size'], 'product_quantity': request.json['prod_qty']
-      }
-
-      user_details = {
-        'first_name': request.json['firstname'], 'last_name': request.json['lastname'],
-        'address_1': request.json['address_1'], 'address_2': request.json['address_2'], 'city': request.json['city'],
-        'state': request.json['state'] , 'zipcode': request.json['zipcode'],
-        'phone': request.json['phone'], 'email': request.json['email'],
-        'card_number': request.json['card_number'], 'card_holder': request.json['card_name'],
-        'card_expiry': request.json['card_expiry'], 'card_cvv': request.json['card_cvv'],
-      }
-
-  message = eastbay.generate_url(product_details, user_details)
-  response = {'message': message}
-  return jsonify(response), 200
-
-
-@app.route('/footlocker', methods=['POST'])
-def purchase_footlocker():
-  if request.method == 'POST':
-    if request.is_json:
-      product_details = {
-        'product_name': request.json['prod_name'], 'product_number': request.json['prod_number'],
-        'product_size': request.json['prod_size'], 'product_quantity': request.json['prod_qty']
-      }
-
-      user_details = {
-        'first_name': request.json['firstname'], 'last_name': request.json['lastname'],
-        'address_1': request.json['address_1'], 'address_2': request.json['address_2'], 'city': request.json['city'],
-        'state': request.json['state'] , 'zipcode': request.json['zipcode'],
-        'phone': request.json['phone'], 'email': request.json['email'],
-        'card_number': request.json['card_number'], 'card_holder': request.json['card_name'],
-        'card_expiry': request.json['card_expiry'], 'card_cvv': request.json['card_cvv'],
-      }
-
-  message = footlocker.generate_url(product_details, user_details)
-  response = {'message': message}
-  return jsonify(response), 200
-
-
-@app.route('/champssports', methods=['POST'])
-def purchase_champssports():
-  if request.method == 'POST':
-    if request.is_json:
-      product_details = {
-        'product_name': request.json['prod_name'], 'product_number': request.json['prod_number'],
-        'product_size': request.json['prod_size'], 'product_quantity': request.json['prod_qty']
-      }
-
-      user_details = {
-        'first_name': request.json['firstname'], 'last_name': request.json['lastname'],
-        'address_1': request.json['address_1'], 'address_2': request.json['address_2'], 'city': request.json['city'],
-        'state': request.json['state'] , 'zipcode': request.json['zipcode'],
-        'phone': request.json['phone'], 'email': request.json['email'],
-        'card_number': request.json['card_number'], 'card_holder': request.json['card_name'],
-        'card_expiry': request.json['card_expiry'], 'card_cvv': request.json['card_cvv'],
-      }
-
-  message = champssports.generate_url(product_details, user_details)
-  response = {'message': message}
-  return jsonify(response), 200
 
 
 if __name__  == "__main__":

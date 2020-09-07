@@ -73,15 +73,9 @@ class Eastbay:
       # driver = webdriver.Chrome('./chromedriver.exe', options=option)
       # print('Chrome Initialized with options')
 
-      # driver = webdriver.Chrome('./chromedriver.exe')
-      # driver = webdriver.Chrome('./chromedriver')
-      # driver = webdriver.Chrome(options=options)
-      # driver = webdriver.Chrome()
-      # driver = webdriver.Chrome('/usr/bin/chromedriver')
-      # driver = webdriver.Chrome('/usr/local/bin/chromedriver')
-      # driver = webdriver.Chrome(executable_path='/usr/local/bin/chromedriver')
-      driver = webdriver.Chrome(ChromeDriverManager().install())
-      # driver = webdriver.Chrome(ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install())
+      driver = webdriver.Chrome('./chromedriver.exe')
+      # driver = webdriver.Chrome(ChromeDriverManager().install())
+      
       print('Chrome Initialized')
       driver.get(url)
       print('Got Url')
