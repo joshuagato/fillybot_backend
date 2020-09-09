@@ -1,0 +1,462 @@
+1599502917709	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\JOSH\\AppData\\Local\\Temp\\rust_mozprofileFUsjKV"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1599502924377	Marionette	INFO	Listening on port 59720
+1599502924838	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.adidas.com/glass/react/2bf709d/adidas/app.app.js, line 1: Error: Promise timed out
+JavaScript error: , line 0: uncaught exception: The call to the server was not successful.
+JavaScript error: , line 0: uncaught exception: The call to the server was not successful.
+JavaScript error: , line 0: uncaught exception: The call to the server was not successful.
+JavaScript error: , line 0: uncaught exception: Object
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: uncaught exception: Object
+JavaScript error: , line 0: uncaught exception: Object
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: 'abort' called on an object that does not implement interface XMLHttpRequest.
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x6A0029,name=PNecko::Msg_RemoveRequestContext) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1599503064722	Marionette	INFO	Stopped listening on port 59720
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1599503117644	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\JOSH\\AppData\\Local\\Temp\\rust_mozprofileD9G7cg"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1599503121764	Marionette	INFO	Listening on port 60187
+1599503121962	Marionette	WARN	TLS certificate errors will be ignored for this session
+console.error: Region.jsm: "Error fetching region" (new AbortError("The operation was aborted. ", (void 0), 689))
+console.error: Region.jsm: "Failed to fetch region" (new Error("NO_RESULT", "resource://gre/modules/Region.jsm", 343))
+console.error: services.settings: 
+  main/message-groups Signature failed  TypeError: NetworkError when attempting to fetch resource.
+console.error: services.settings: 
+  main/partitioning-exempt-urls Signature failed  TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: https://www.footlocker.com/built/104/app.client.js, line 1: Error: Loading chunk 4 failed.
+(error: https://www.footlocker.com/built/104/4.client.js)
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1599503221952	Marionette	INFO	Stopped listening on port 60187
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1599503231011	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\JOSH\\AppData\\Local\\Temp\\rust_mozprofileqjokAn"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1599503235084	Marionette	INFO	Listening on port 60278
+1599503235344	Marionette	WARN	TLS certificate errors will be ignored for this session
+console.error: Region.jsm: "Error fetching region" (new AbortError("The operation was aborted. ", (void 0), 689))
+console.error: Region.jsm: "Failed to fetch region" (new Error("NO_RESULT", "resource://gre/modules/Region.jsm", 343))
+console.error: services.settings: 
+  main/message-groups Signature failed  TypeError: NetworkError when attempting to fetch resource.
+console.error: services.settings: 
+  main/partitioning-exempt-urls Signature failed  TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: https://www.footlocker.com/built/104/app.client.js, line 1: Error: Loading chunk 4 failed.
+(error: https://www.footlocker.com/built/104/4.client.js)
+1599503315014	Marionette	INFO	Stopped listening on port 60278
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1599528111508	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\JOSH\\AppData\\Local\\Temp\\rust_mozprofile6MudQP"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1599528124430	Marionette	INFO	Listening on port 53319
+1599528124698	Marionette	WARN	TLS certificate errors will be ignored for this session
+console.error: Region.jsm: "Error fetching region" (new AbortError("The operation was aborted. ", (void 0), 689))
+console.error: Region.jsm: "Failed to fetch region" (new Error("NO_RESULT", "resource://gre/modules/Region.jsm", 343))
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: Error: /api/v3/session?timestamp=1599528185399 could not parse JSON
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: TypeError: t is undefined
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: Error: /api/v3/session?timestamp=1599528185441 could not parse JSON
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: TypeError: t is undefined
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://apps.bazaarvoice.com/deployments/Footlocker/main_site/production/en_US/bv.js, line 18: Error: Error: script timeout https://analytics-static.ugc.bazaarvoice.com/prod/static/3/bv-analytics.js
+console.error: services.settings: 
+  main/cfr-fxa Signature failed  TypeError: NetworkError when attempting to fetch resource.
+console.error: services.settings: 
+  main/cfr Signature failed  TypeError: NetworkError when attempting to fetch resource.
+1599528271579	Marionette	INFO	Stopped listening on port 53319
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1599528280313	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\JOSH\\AppData\\Local\\Temp\\rust_mozprofileq4FFS5"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1599528284775	Marionette	INFO	Listening on port 53558
+1599528285233	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.champssports.com/product/nike-air-max-270-react/O4971001.html line 6 > injectedScript, line 2: TypeError: dctfl.facebook is undefined
+JavaScript error: https://www.champssports.com/product/nike-air-max-270-react/O4971001.html line 6 > injectedScript, line 2: TypeError: dctfl.google is undefined
+JavaScript error: https://www.champssports.com/product/nike-air-max-270-react/O4971001.html line 6 > injectedScript, line 2: TypeError: dctfl.twitter is undefined
+JavaScript error: https://www.champssports.com/product/nike-air-max-270-react/O4971001.html line 6 > injectedScript, line 2: TypeError: dctfl.pinterest is undefined
+JavaScript error: https://www.champssports.com/product/nike-air-max-270-react/O4971001.html line 6 > injectedScript, line 2: TypeError: dctfl.snapchat is undefined
+1599528410795	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:245:13
+TimedPromise@chrome://marionette/content/sync.js:230:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:416:10
+webdriverClickElement@chrome://marionette/content/interaction.js:182:31
+JavaScript error: https://www.champssports.com/product/nike-air-max-270-react/O4971001.html line 6 > injectedScript, line 2: TypeError: dctfl.digitalRemedy is undefined
+JavaScript error: https://www.champssports.com/cart line 6 > injectedScript, line 2: TypeError: dctfl.twitter is undefined
+JavaScript error: https://www.champssports.com/cart line 6 > injectedScript, line 2: TypeError: dctfl.bing is undefined
+JavaScript error: https://www.champssports.com/cart line 6 > injectedScript, line 2: TypeError: dctfl.google is undefined
+JavaScript error: https://www.champssports.com/cart line 6 > injectedScript, line 2: TypeError: dctfl.pinterest is undefined
+JavaScript error: https://www.champssports.com/cart line 6 > injectedScript, line 2: TypeError: dctfl.snapchat is undefined
+JavaScript error: https://www.champssports.com/checkout line 6 > injectedScript, line 2: TypeError: dctfl.bing is undefined
+JavaScript error: https://www.champssports.com/checkout line 6 > injectedScript, line 2: TypeError: dctfl.google is undefined
+JavaScript error: https://www.champssports.com/checkout line 6 > injectedScript, line 2: TypeError: dctfl.pinterest is undefined
+JavaScript error: https://www.champssports.com/checkout line 6 > injectedScript, line 2: TypeError: dctfl.snapchat is undefined
+JavaScript error: https://www.champssports.com/checkout line 6 > injectedScript, line 2: TypeError: dctfl.google is undefined
+JavaScript error: https://www.champssports.com/checkout line 6 > injectedScript, line 2: TypeError: dctfl.facebook is undefined
+JavaScript error: https://www.champssports.com/checkout line 6 > injectedScript, line 2: TypeError: dctfl.twitter is undefined
+JavaScript error: https://www.champssports.com/checkout line 6 > injectedScript, line 2: TypeError: dctfl.snapchat is undefined
+JavaScript error: https://insight.adsrvr.org/track/up?adv=e13odyo&ref=https%3A%2F%2Fwww.champssports.com%2Fproduct%2Fnike-air-max-270-react%2FO4971001.html&upid=fm9xuoy&upv=1.1.0, line 10: ReferenceError: TTDCM is not defined
+JavaScript error: https://insight.adsrvr.org/track/up?adv=e13odyo&ref=https%3A%2F%2Fwww.champssports.com%2Fcheckout&upid=fm9xuoy&upv=1.1.0, line 10: ReferenceError: TTDCM is not defined
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.champssports.com"
+SourceActor threw an exception: [Exception... "Component returned failure code: 0x80470002 (NS_BASE_STREAM_CLOSED) [nsIInputStream.available]"  nsresult: "0x80470002 (NS_BASE_STREAM_CLOSED)"  location: "JS frame :: resource://devtools/shared/DevToolsUtils.js :: onResponse :: line 560"  data: no]
+Stack: onResponse@resource://devtools/shared/DevToolsUtils.js:560:34
+onStopRequest@resource://gre/modules/NetUtil.jsm:128:18
+Line: 560, column: 0
+console.error: ({})
+SourceActor threw an exception: [Exception... "Component returned failure code: 0x80470002 (NS_BASE_STREAM_CLOSED) [nsIInputStream.available]"  nsresult: "0x80470002 (NS_BASE_STREAM_CLOSED)"  location: "JS frame :: resource://devtools/shared/DevToolsUtils.js :: onResponse :: line 560"  data: no]
+Stack: onResponse@resource://devtools/shared/DevToolsUtils.js:560:34
+onStopRequest@resource://gre/modules/NetUtil.jsm:128:18
+Line: 560, column: 0
+console.error: ({})
+JavaScript error: resource://devtools/shared/DevToolsUtils.js, line 560: NS_BASE_STREAM_CLOSED: Component returned failure code: 0x80470002 (NS_BASE_STREAM_CLOSED) [nsIInputStream.available]
+JavaScript error: resource://devtools/shared/DevToolsUtils.js, line 560: NS_BASE_STREAM_CLOSED: Component returned failure code: 0x80470002 (NS_BASE_STREAM_CLOSED) [nsIInputStream.available]
+SourceActor threw an exception: [Exception... "Component returned failure code: 0x80470002 (NS_BASE_STREAM_CLOSED) [nsIInputStream.available]"  nsresult: "0x80470002 (NS_BASE_STREAM_CLOSED)"  location: "JS frame :: resource://devtools/shared/DevToolsUtils.js :: onResponse :: line 560"  data: no]
+Stack: onResponse@resource://devtools/shared/DevToolsUtils.js:560:34
+onStopRequest@resource://gre/modules/NetUtil.jsm:128:18
+Line: 560, column: 0
+console.error: ({})
+JavaScript error: resource://devtools/shared/DevToolsUtils.js, line 560: NS_BASE_STREAM_CLOSED: Component returned failure code: 0x80470002 (NS_BASE_STREAM_CLOSED) [nsIInputStream.available]
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.champssports.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.champssports.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.champssports.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.champssports.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.champssports.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.champssports.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.champssports.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.champssports.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.champssports.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.champssports.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.champssports.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.champssports.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.champssports.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.champssports.com"
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+1599530279296	Marionette	INFO	Stopped listening on port 53558
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1599530287558	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\JOSH\\AppData\\Local\\Temp\\rust_mozprofilemZhDmk"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1599530291826	Marionette	INFO	Listening on port 54283
+1599530291881	Marionette	WARN	TLS certificate errors will be ignored for this session
+console.error: Region.jsm: "Error fetching region" (new AbortError("The operation was aborted. ", (void 0), 689))
+console.error: Region.jsm: "Failed to fetch region" (new Error("NO_RESULT", "resource://gre/modules/Region.jsm", 343))
+console.error: services.settings: 
+  main/fxmonitor-breaches Signature failed  TypeError: NetworkError when attempting to fetch resource.
+console.error: services.settings: 
+  main/message-groups Signature failed  TypeError: NetworkError when attempting to fetch resource.
+console.error: services.settings: 
+  main/partitioning-exempt-urls Signature failed  TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: Error: /api/v3/session?timestamp=1599530355565 could not parse JSON
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: TypeError: t is undefined
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: Error: /api/v3/session?timestamp=1599530355602 could not parse JSON
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: TypeError: t is undefined
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.footlocker.com/product/jordan-bloyal/T1603100.html line 6 > injectedScript, line 2: TypeError: dctfl.facebook is undefined
+JavaScript error: https://www.footlocker.com/product/jordan-bloyal/T1603100.html line 6 > injectedScript, line 2: TypeError: dctfl.google is undefined
+JavaScript error: https://www.footlocker.com/product/jordan-bloyal/T1603100.html line 6 > injectedScript, line 2: TypeError: dctfl.twitter is undefined
+JavaScript error: https://www.footlocker.com/product/jordan-bloyal/T1603100.html line 6 > injectedScript, line 2: TypeError: dctfl.pinterest is undefined
+JavaScript error: https://www.footlocker.com/product/jordan-bloyal/T1603100.html line 6 > injectedScript, line 2: TypeError: dctfl.snapchat is undefined
+JavaScript error: https://www.footlocker.com/product/jordan-bloyal/T1603100.html line 6 > injectedScript, line 2: TypeError: dctfl.digitalRemedy is undefined
+JavaScript error: https://apps.bazaarvoice.com/deployments/Footlocker/main_site/production/en_US/bv.js, line 18: Error: Error: script timeout https://analytics-static.ugc.bazaarvoice.com/prod/static/3/bv-analytics.js
+1599530369160	Marionette	INFO	Stopped listening on port 54283
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1599530382053	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\JOSH\\AppData\\Local\\Temp\\rust_mozprofile4MMA8e"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1599530385842	Marionette	INFO	Listening on port 54430
+1599530385873	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: Error: /api/v3/session?timestamp=1599530395128 could not parse JSON
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: TypeError: t is undefined
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: Error: /api/v3/session?timestamp=1599530395165 could not parse JSON
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: TypeError: t is undefined
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: resource://gre/modules/UrlClassifierListManager.jsm, line 691: TypeError: this.tablesData[table] is undefined
+console.error: services.settings: 
+  main/messaging-experiments Signature failed  TypeError: NetworkError when attempting to fetch resource.
+console.error: services.settings: 
+  main/message-groups Signature failed  TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: https://apps.bazaarvoice.com/deployments/Footlocker/main_site/production/en_US/bv.js, line 18: Error: Error: could not load https://analytics-static.ugc.bazaarvoice.com/prod/static/3/bv-analytics.js
+1599530403088	Marionette	INFO	Stopped listening on port 54430
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1599530421902	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\JOSH\\AppData\\Local\\Temp\\rust_mozprofileKmvUTb"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1599530426521	Marionette	INFO	Listening on port 54589
+1599530426829	Marionette	WARN	TLS certificate errors will be ignored for this session
+console.error: services.settings: 
+  main/messaging-experiments Signature failed  TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: Error: /api/v3/session?timestamp=1599530490449 could not parse JSON
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: TypeError: t is undefined
+1599530524450	Marionette	INFO	Stopped listening on port 54589
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+[Parent 11412, Gecko_IOThread] WARNING: pipe error: 232: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 545
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1599530533293	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\JOSH\\AppData\\Local\\Temp\\rust_mozprofileynKQmO"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1599530537455	Marionette	INFO	Listening on port 54715
+1599530537614	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: Error: /api/v3/session?timestamp=1599530600749 could not parse JSON
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: TypeError: t is undefined
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: Error: /api/v3/session?timestamp=1599530600789 could not parse JSON
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: TypeError: t is undefined
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+1599530640209	Marionette	INFO	Stopped listening on port 54715
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1599530728199	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\JOSH\\AppData\\Local\\Temp\\rust_mozprofileN3bsc2"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1599530732185	Marionette	INFO	Listening on port 54862
+1599530732518	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: TypeError: t is undefined
+JavaScript error: https://www.footlocker.com/built/104/1.client.js, line 1: Error: /api/users/carts/current/entries?timestamp=1599530807616 could not parse JSON
+SourceActor threw an exception: [Exception... "Component returned failure code: 0x80470002 (NS_BASE_STREAM_CLOSED) [nsIInputStream.available]"  nsresult: "0x80470002 (NS_BASE_STREAM_CLOSED)"  location: "JS frame :: resource://devtools/shared/DevToolsUtils.js :: onResponse :: line 560"  data: no]
+Stack: onResponse@resource://devtools/shared/DevToolsUtils.js:560:34
+onStopRequest@resource://gre/modules/NetUtil.jsm:128:18
+Line: 560, column: 0
+console.error: ({})
+JavaScript error: resource://devtools/shared/DevToolsUtils.js, line 560: NS_BASE_STREAM_CLOSED: Component returned failure code: 0x80470002 (NS_BASE_STREAM_CLOSED) [nsIInputStream.available]
+1599531132524	Marionette	INFO	Stopped listening on port 54862
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1599558734979	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\JOSH\\AppData\\Local\\Temp\\rust_mozprofileHilcI7"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1599558739793	Marionette	INFO	Listening on port 57309
+1599558739916	Marionette	WARN	TLS certificate errors will be ignored for this session
+console.error: services.settings: 
+  Message: TypeError: NetworkError when attempting to fetch resource.
+console.warn: services.settings: main/url-classifier-skip-urls sync interrupted by shutdown
+console.warn: services.settings: blocklists/plugins sync interrupted by shutdown
+console.warn: services.settings: main/partitioning-exempt-urls sync interrupted by shutdown
+console.warn: services.settings: security-state/intermediates sync interrupted by shutdown
+console.warn: services.settings: security-state/onecrl sync interrupted by shutdown
+console.warn: services.settings: main/cfr-fxa sync interrupted by shutdown
+console.warn: services.settings: main/public-suffix-list sync interrupted by shutdown
+console.warn: services.settings: main/hijack-blocklists sync interrupted by shutdown
+console.warn: services.settings: main/language-dictionaries sync interrupted by shutdown
+console.warn: services.settings: main/anti-tracking-url-decoration sync interrupted by shutdown
+console.warn: services.settings: main/sites-classification sync interrupted by shutdown
+console.warn: services.settings: pinning/pins sync interrupted by shutdown
+console.warn: services.settings: blocklists/gfx sync interrupted by shutdown
+1599559131619	Marionette	INFO	Stopped listening on port 57309
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1599559209968	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\JOSH\\AppData\\Local\\Temp\\rust_mozprofileleutVy"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1599559214638	Marionette	INFO	Listening on port 57683
+1599559214895	Marionette	WARN	TLS certificate errors will be ignored for this session
+1599559339216	Marionette	INFO	Stopped listening on port 57683
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1599559334938	Marionette	INFO	Listening on port 57843
+1599559335332	Marionette	WARN	TLS certificate errors will be ignored for this session
+console.error: Region.jsm: "Error fetching region" (new AbortError("The operation was aborted. ", (void 0), 689))
+console.error: Region.jsm: "Failed to fetch region" (new Error("NO_RESULT", "resource://gre/modules/Region.jsm", 343))
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: Error: /api/v3/session?timestamp=1599559498303 could not parse JSON
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: t is undefined
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: Error: /api/v3/session?timestamp=1599559498399 could not parse JSON
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: t is undefined
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+1599559543306	Marionette	INFO	Stopped listening on port 57843
+1599559548263	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\JOSH\\AppData\\Local\\Temp\\rust_mozprofileB6ucIQ"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1599559552668	Marionette	INFO	Listening on port 59697
+1599559552690	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: Error: /api/v3/session?timestamp=1599559630623 could not parse JSON
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: t is undefined
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: Error: /api/v3/session?timestamp=1599559630693 could not parse JSON
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: t is undefined
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/product/nike-air-max-270-react/O4971001.html line 6 > injectedScript, line 2: TypeError: dctfl.facebook is undefined
+JavaScript error: https://www.champssports.com/product/nike-air-max-270-react/O4971001.html line 6 > injectedScript, line 2: TypeError: dctfl.google is undefined
+JavaScript error: https://www.champssports.com/product/nike-air-max-270-react/O4971001.html line 6 > injectedScript, line 2: TypeError: dctfl.twitter is undefined
+JavaScript error: https://www.champssports.com/product/nike-air-max-270-react/O4971001.html line 6 > injectedScript, line 2: TypeError: dctfl.pinterest is undefined
+JavaScript error: https://www.champssports.com/product/nike-air-max-270-react/O4971001.html line 6 > injectedScript, line 2: TypeError: dctfl.snapchat is undefined
+1599559677813	Marionette	INFO	Stopped listening on port 59697
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1599559697551	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\JOSH\\AppData\\Local\\Temp\\rust_mozprofileGuIp7l"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1599559702117	Marionette	INFO	Listening on port 59883
+1599559702477	Marionette	WARN	TLS certificate errors will be ignored for this session
+console.error: Region.jsm: "Error fetching region" (new AbortError("The operation was aborted. ", (void 0), 689))
+console.error: Region.jsm: "Failed to fetch region" (new Error("NO_RESULT", "resource://gre/modules/Region.jsm", 343))
+1599559842752	Marionette	INFO	Stopped listening on port 59883
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+

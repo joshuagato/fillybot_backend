@@ -72,10 +72,11 @@ class Adidas:
     # driver = webdriver.Chrome('./chromedriver.exe', options=option)
     # print('Chrome Initialized with options')
 
-    driver = webdriver.Chrome('./chromedriver.exe')
+    driver = webdriver.Firefox()
+    # driver = webdriver.Chrome('./chromedriver.exe')
     # driver = webdriver.Chrome(ChromeDriverManager().install())
-    
     print('Chrome Initialized')
+    
     driver.get(url)
     print('Got Url')
     wait = WebDriverWait(driver, 20)

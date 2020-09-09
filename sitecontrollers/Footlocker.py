@@ -71,10 +71,11 @@ class Footlocker:
     # driver = webdriver.Chrome('./chromedriver.exe', options=option)
     # print('Chrome Initialized with options')
 
-    driver = webdriver.Chrome('./chromedriver.exe')
+    driver = webdriver.Firefox()
+    # driver = webdriver.Chrome('./chromedriver.exe')
     # driver = webdriver.Chrome(ChromeDriverManager().install())
-      
     print('Chrome Initialized')
+      
     driver.get(url)
     print('Got Url')
     wait = WebDriverWait(driver, 40)
@@ -126,7 +127,7 @@ class Footlocker:
         error_message = driver.find_element_by_xpath("//h1[text()='Access Denied']")
         print('error_message', error_message)
         if error_message:
-            driver.refresh()
+          driver.refresh()
         #WebDriverWait(driver, 5).until(EC.presence_of_element_located(By.XPATH, "//h2[text()='429 Too Many Requests']"))
       except:
         error_message = ''

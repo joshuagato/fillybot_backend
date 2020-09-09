@@ -71,10 +71,11 @@ class Champssports:
     # driver = webdriver.Chrome('./chromedriver.exe', options=option)
     # print('Chrome Initialized with options')
 
-    driver = webdriver.Chrome('./chromedriver.exe')
+    driver = webdriver.Firefox()
+    # driver = webdriver.Chrome('./chromedriver.exe')
     # driver = webdriver.Chrome(ChromeDriverManager().install())
-    
     print('Chrome Initialized')
+    
     driver.get(url)
     print('Got Url')
     wait = WebDriverWait(driver, 40)
@@ -87,7 +88,7 @@ class Champssports:
         #close_button = wait.until(EC.presence_of_element_located((By.XPATH, "//button[@class='IconButton c-modal__close']")))
         print('close_button', close_button)
       except:
-          print('No modal')
+        print('No modal')
 
 
     def close_stylish_modal():
