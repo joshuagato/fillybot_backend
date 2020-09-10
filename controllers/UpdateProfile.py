@@ -4,8 +4,8 @@ from models.profile_model import Profile, profile_schema, profiles_schema
 class UpdateProfile(Resource):
   def put(self, id):
     fetched_profile = Profile.query.get(id)
-      if not fetched_profile:
-        return make_response(jsonify({'success': False, 'messgae': 'Profile not found'}), 401)
+    if not fetched_profile:
+      return make_response(jsonify({'success': False, 'messgae': 'Profile not found'}), 401)
 
     if request.method == 'PUT':
       if request.is_json:

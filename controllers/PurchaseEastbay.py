@@ -21,6 +21,5 @@ class PurchaseEastbay(Resource):
           'card_expiry': request.json['card_expiry'], 'card_cvv': request.json['card_cvv'],
         }
 
-        message = eastbay.generate_url(product_details, user_details)
-        response = {'message': message}
-        return jsonify(response), 200
+        response = eastbay.generate_url(product_details, user_details)
+        return make_response(jsonify(response), 200)

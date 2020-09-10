@@ -52,9 +52,8 @@ class Champssports:
       'url': derived_url, 'size': product_size, 'quantity': product_quantity
     }
 
-    # return self.get_product_page(product_summary, user_details)
-    self.get_product_page(product_summary, user_details)
-
+    return self.get_product_page(product_summary, user_details)
+    # self.get_product_page(product_summary, user_details)
     # purchase = pool.apply_async(self.get_product_page, args=(product_summary, user_details))
     # return multiprocessing.cpu_count()
 
@@ -78,7 +77,7 @@ class Champssports:
     
     driver.get(url)
     print('Got Url')
-    wait = WebDriverWait(driver, 40)
+    wait = WebDriverWait(driver, 20)
     print('Wait Initialized')
 
     def close_modal():
@@ -99,7 +98,6 @@ class Champssports:
         print('close_stylish_modal_button', close_stylish_modal_button)
       except:
         print('No Stylish modal')
-
 
 
     def close_stylish_modal2():
@@ -133,38 +131,13 @@ class Champssports:
       get_page_running()
 
 
-    # time.sleep(50)
-
-
-    #driver.switch_to.default_content()
-    #all_frames = driver.find_elements_by_tag_name('iframe')
-    #print('Frames @ (Audio) Length', len(all_frames))
-
-
     close_all_modals()
 
-    # size = wait.until(EC.presence_of_element_located((By.XPATH, "//div[@class='c-form-field c-form-field--radio ProductSize']/label/span[text()='09.5']")))
     size = wait.until(EC.presence_of_element_located((By.XPATH, "//div[@class='c-form-field c-form-field--radio ProductSize']/label/span[text()='{}']".format(size))))
     size.click()
     print('Size Selected')
 
-    # qty = wait.until(EC.presence_of_element_located((By.ID, "input_tel_quantity")))
-    # qty.send_keys(Keys.BACKSPACE)
-    # qty.send_keys(quantity)
-    # print('Quntity Typed')
-
-    # close_all_modals()
-
-    # try:
-    #     size_again = driver.find_element_by_xpath.click("//div[@class='c-form-field c-form-field--radio ProductSize']/label/span[text()='{}']".format(size))
-    #     size_again.click()
-    #     print('Size Selected Again')
-    # except:
-    #     print('NO: Size Selected Again')
-
-
     close_all_modals()
-
 
     addtocart = driver.find_element_by_xpath("//button[@class='Button ProductDetails-form__action']")
     addtocart.click()
@@ -178,8 +151,6 @@ class Champssports:
     view_cart.click()
     print('Cart Viewed')
 
-    #time.sleep(5)
-
 
     close_all_modals()
 
@@ -188,17 +159,6 @@ class Champssports:
     checkout = wait.until(EC.presence_of_element_located((By.XPATH, "//div/a[text()='Guest Checkout']")))
     checkout.click()
     print('Checked Out')
-
-
-
-
-
-    # user_details = {'first_name': 'Zerubabel', 'last_name': 'Baah', 'address': '2046 Nicklaus circle',
-    # 'city': 'Roseville', 'state': 'California', 'zipcode': '95678', 'phone': '+16145564480',
-    # 'email': 'lemuelzerubbabelbaah@gmail.com'
-    # }
-
-    # state_name = user_details['state']
 
 
     time.sleep(1)
@@ -214,9 +174,7 @@ class Champssports:
     time.sleep(0.3)
     driver.find_element_by_name('town').send_keys(user_details['city'])
     time.sleep(0.3)
-    state = driver.find_element_by_xpath("//select/option[(text()='{}')]".format(state_name))
-    # state = driver.find_element_by_xpath("//select/option[contains(text(), '{}')]".format(state_name))
-    state.click()
+    driver.find_element_by_xpath("//select/option[(text()='{}')]".format(state_name))
     time.sleep(0.3)
     driver.find_element_by_name('phone').send_keys(user_details['phone'])
     time.sleep(0.3)
@@ -232,34 +190,31 @@ class Champssports:
 
     close_all_modals()
 
-    # time.sleep(1)
-    wait.until(EC.presence_of_element_located((By.ID, "encryptedExpiryMonth"))).send_keys(user_details['card_expiry'].split(' / ', 0))
-    time.sleep(0.3)
-    wait.until(EC.presence_of_element_located((By.ID, "encryptedCardNumber"))).send_keys(user_details['card_number'])
-    time.sleep(0.3)
-    driver.find_element_by_id('encryptedExpiryYear').send_keys(user_details['card_expiry'].split(' / ', 1))
-    time.sleep(0.3)
-    driver.find_element_by_id('encryptedSecurityCode').send_keys(user_details['card_cvv'])
-    time.sleep(0.3)
+    try:
+      elements = wait.until(EC.presence_of_element_located((By.CLASS_NAME, "Field col Adyen-cardNumber")))
+      print(elements)
+    except:
+      print('Not found')
+      
+    driver.switch_to.default_content()
+    all_frames = driver.find_elements_by_tag_name('iframe')
 
-    print('Review and Pay Clicked')
+    def fill_card_details(identity, value):
+      for x in range(len(all_frames)):
+        driver.switch_to.default_content()
+        driver.switch_to.frame(all_frames[x])
+        try:
+          driver.find_element_by_id(identity).send_keys(value)
+        except:
+          print('Inner')
 
-    place_order = wait.until(EC.presence_of_element_located((By.XPATH, "//button[text()='Place Order']")))
-    place_order.click()
+    fill_card_details('encryptedCardNumber', user_details['card_number'])
+    fill_card_details('encryptedExpiryMonth', user_details['card_expiry'].split(' / ', 1)[0])
+    fill_card_details('encryptedExpiryYear', user_details['card_expiry'].split(' / ', 1)[1])
+    fill_card_details('encryptedSecurityCode', user_details['card_cvv'])
 
-    print('Place Order Clicked')
-
-    # review_and_pay = driver.find_element_by_xpath("//button/span[(text()='Review and Pay')]")
-    # review_and_pay = wait.until(EC.presence_of_element_located((By.XPATH, "//button/span[(text()='Review and Pay')]")))
-    # review_and_pay.click()
-    time.sleep(3000)
-
-    # time.sleep(0.3)
-    # wait.until(EC.presence_of_element_located((By.NAME, 'card.cvv'))).send_keys(user_details['last_name'])
-    #
-    # addtobag = driver.find_element_by_xpath("//button[@class='gl-cta gl-cta--primary gl-cta--full-width']")
-    # addtobag.click()
-    # print('Added to Bag')
-
-    # return return_message
-    # return 'No Message'
+    # place_order = wait.until(EC.presence_of_element_located((By.XPATH, "//button[text()='Place Order']")))
+    # place_order.click()
+    # print('Place Order Clicked')
+    # time.sleep(3000)
+    return {'success': True, 'message': 'Ordered'}

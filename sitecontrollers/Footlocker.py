@@ -52,9 +52,8 @@ class Footlocker:
       'url': derived_url, 'size': product_size, 'quantity': product_quantity
     }
 
-    # return self.get_product_page(product_summary, user_details)
-    self.get_product_page(product_summary, user_details)
-
+    return self.get_product_page(product_summary, user_details)
+    # self.get_product_page(product_summary, user_details)
     # purchase = pool.apply_async(self.get_product_page, args=(product_summary, user_details))
     # return multiprocessing.cpu_count()
 
@@ -78,7 +77,7 @@ class Footlocker:
       
     driver.get(url)
     print('Got Url')
-    wait = WebDriverWait(driver, 40)
+    wait = WebDriverWait(driver, 20)
     print('Wait Initialized')
 
     def close_modal():
@@ -146,15 +145,6 @@ class Footlocker:
         get_page_running_despite()
 
 
-    # close_all_modals()
-    # time.sleep(10)
-    # print('After 10secs wait')
-    # close_all_modals()
-
-    # driver.switch_to.default_content()
-    # all_frames = driver.find_elements_by_tag_name('iframe')
-    # print('Frames @ (Audio) Length', len(all_frames))
-
     force_page_to_run()
     close_all_modals()
 
@@ -164,23 +154,7 @@ class Footlocker:
     size.click()
     print('Size Selected')
 
-    # qty = wait.until(EC.presence_of_element_located((By.ID, "input_tel_quantity")))
-    # qty.send_keys(Keys.BACKSPACE)
-    # qty.send_keys(quantity)
-    # print('Quntity Typed')
-
-    # close_all_modals()
-    #
-    # try:
-    #     size_again = driver.find_element_by_xpath.click("//div[@class='c-form-field c-form-field--radio ProductSize']/label/span[text()='{}']".format(size))
-    #     size_again.click()
-    #     print('Size Selected Again')
-    # except:
-    #     print('NO: Size Selected Again')
-
-
     close_all_modals()
-
 
     # addtocart = driver.find_element_by_xpath("//button[@class='Button ProductDetails-form__action']")
     addtocart = wait.until(EC.presence_of_element_located((By.XPATH, "//button[@class='Button ProductDetails-form__action']")))
@@ -193,90 +167,69 @@ class Footlocker:
 
     view_cart = wait.until(EC.presence_of_element_located((By.XPATH, "//div[@class='c-cart-added__cta']")))
     view_cart.click()
-    print('Cart Viewed')
+    print('Cart Viewed')    
+    
+    close_all_modals()
+    
+    # checkout = driver.find_element_by_xpath("//div/a[text()='Guest Checkout']")
+    checkout = wait.until(EC.presence_of_element_located((By.XPATH, "//div/a[text()='Guest Checkout']")))
+    checkout.click()
+    print('Checked Out')    
+    
+    time.sleep(1)
+    wait.until(EC.presence_of_element_located((By.NAME, 'firstName'))).send_keys(user_details['first_name'])
+    time.sleep(0.3)
+    wait.until(EC.presence_of_element_located((By.NAME, 'lastName'))).send_keys(user_details['last_name'])
+    time.sleep(0.3)
+    driver.find_element_by_name('line1').send_keys(user_details['address_1'])
+    time.sleep(0.3)
+    driver.find_element_by_name('line2').send_keys(user_details['address_2'])
+    time.sleep(0.3)
+    driver.find_element_by_name('postalCode').send_keys(user_details['zipcode'])
+    time.sleep(0.3)
+    driver.find_element_by_name('town').send_keys(user_details['city'])
+    time.sleep(0.3)
+    driver.find_element_by_xpath("//select/option[(text()='{}')]".format(state_name))
+    time.sleep(0.3)
+    driver.find_element_by_name('phone').send_keys(user_details['phone'])
+    time.sleep(0.3)
+    driver.find_element_by_name('email').send_keys(user_details['email'])
+    time.sleep(0.3)
+    print('Address Details Provided')
+    
+    close_all_modals()
+    
+    save_and_continue = driver.find_element_by_xpath("//div/button[(text()='Save & Continue')]")
+    save_and_continue.click()
+    print('Save and Continue Clicked')
+    
+    close_all_modals()
+    
+    try:
+      elements = wait.until(EC.presence_of_element_located((By.CLASS_NAME, "Field col Adyen-cardNumber")))
+      print(elements)
+    except:
+      print('Not found')
+      
+    driver.switch_to.default_content()
+    all_frames = driver.find_elements_by_tag_name('iframe')
 
-    # #time.sleep(5)
-    #
-    #
-    # close_all_modals()
-    #
-    #
-    # # checkout = driver.find_element_by_xpath("//div/a[text()='Guest Checkout']")
-    # checkout = wait.until(EC.presence_of_element_located((By.XPATH, "//div/a[text()='Guest Checkout']")))
-    # checkout.click()
-    # print('Checked Out')
-    #
-    #
-    #
-    #
-    #
-    # # user_details = {'first_name': 'Zerubabel', 'last_name': 'Baah', 'address': '2046 Nicklaus circle',
-    # # 'city': 'Roseville', 'state': 'California', 'zipcode': '95678', 'phone': '+16145564480',
-    # # 'email': 'lemuelzerubbabelbaah@gmail.com'
-    # # }
-    #
-    # # state_name = user_details['state']
-    #
-    #
-    # time.sleep(1)
-    # wait.until(EC.presence_of_element_located((By.NAME, 'firstName'))).send_keys(user_details['first_name'])
-    # time.sleep(0.3)
-    # wait.until(EC.presence_of_element_located((By.NAME, 'lastName'))).send_keys(user_details['last_name'])
-    # time.sleep(0.3)
-    # driver.find_element_by_name('line1').send_keys(user_details['address_1'])
-    # time.sleep(0.3)
-    # driver.find_element_by_name('line2').send_keys(user_details['address_2'])
-    # time.sleep(0.3)
-    # driver.find_element_by_name('postalCode').send_keys(user_details['zipcode'])
-    # time.sleep(0.3)
-    # driver.find_element_by_name('town').send_keys(user_details['city'])
-    # time.sleep(0.3)
-    # state = driver.find_element_by_xpath("//select/option[(text()='{}')]".format(state_name))
-    # # state = driver.find_element_by_xpath("//select/option[contains(text(), '{}')]".format(state_name))
-    # state.click()
-    # time.sleep(0.3)
-    # driver.find_element_by_name('phone').send_keys(user_details['phone'])
-    # time.sleep(0.3)
-    # driver.find_element_by_name('email').send_keys(user_details['email'])
-    # time.sleep(0.3)
-    # print('Address Details Provided')
-    #
-    # close_all_modals()
-    #
-    # save_and_continue = driver.find_element_by_xpath("//div/button[(text()='Save & Continue')]")
-    # save_and_continue.click()
-    # print('Save and Continue Clicked')
-    #
-    # close_all_modals()
-    #
-    # # time.sleep(1)
-    # wait.until(EC.presence_of_element_located((By.ID, "encryptedExpiryMonth"))).send_keys(user_details['card_expiry'].split(' / ', 0))
-    # time.sleep(0.3)
-    # wait.until(EC.presence_of_element_located((By.ID, "encryptedCardNumber"))).send_keys(user_details['card_number'])
-    # time.sleep(0.3)
-    # driver.find_element_by_id('encryptedExpiryYear').send_keys(user_details['card_expiry'].split(' / ', 1))
-    # time.sleep(0.3)
-    # driver.find_element_by_id('encryptedSecurityCode').send_keys(user_details['card_cvv'])
-    # time.sleep(0.3)
-    #
-    # print('Review and Pay Clicked')
-    #
+    def fill_card_details(identity, value):
+      for x in range(len(all_frames)):
+        driver.switch_to.default_content()
+        driver.switch_to.frame(all_frames[x])
+        try:
+          driver.find_element_by_id(identity).send_keys(value)
+        except:
+          print('Inner')
+
+    fill_card_details('encryptedCardNumber', user_details['card_number'])
+    fill_card_details('encryptedExpiryMonth', user_details['card_expiry'].split(' / ', 1)[0])
+    fill_card_details('encryptedExpiryYear', user_details['card_expiry'].split(' / ', 1)[1])
+    fill_card_details('encryptedSecurityCode', user_details['card_cvv'])
+
     # place_order = wait.until(EC.presence_of_element_located((By.XPATH, "//button[text()='Place Order']")))
     # place_order.click()
-    #
     # print('Place Order Clicked')
-    #
-    # # review_and_pay = driver.find_element_by_xpath("//button/span[(text()='Review and Pay')]")
-    # # review_and_pay = wait.until(EC.presence_of_element_located((By.XPATH, "//button/span[(text()='Review and Pay')]")))
-    # # review_and_pay.click()
-    time.sleep(3000)
-    #
-    # # time.sleep(0.3)
-    # # wait.until(EC.presence_of_element_located((By.NAME, 'card.cvv'))).send_keys(user_details['last_name'])
-    # #
-    # # addtobag = driver.find_element_by_xpath("//button[@class='gl-cta gl-cta--primary gl-cta--full-width']")
-    # # addtobag.click()
-    # # print('Added to Bag')
-    #
-    # # return return_message
-    # # return 'No Message'
+    # time.sleep(3000)
+    return {'success': True, 'message': 'Ordered'}

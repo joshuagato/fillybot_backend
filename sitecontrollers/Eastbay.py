@@ -43,8 +43,6 @@ class Eastbay:
   
   def generate_url(self, product_details, user_details):
     product_name = product_details.get('product_name').lower().replace("'", '').replace(' ', '-').replace('_', '-')
-    # https://www.eastbay.com/product/~/D5008600.html
-    # https://www.eastbay.com/product/nike-air-max-97-mens/W5584100.html
 
     derived_url = 'https://www.eastbay.com/product/' + product_name + '/' + product_details['product_number'] + '.html'
     product_size = product_details.get('product_size')
@@ -54,9 +52,8 @@ class Eastbay:
       'url': derived_url, 'size': product_size, 'quantity': product_quantity
     }
 
-    # return self.get_product_page(product_summary, user_details)
-    self.get_product_page(product_summary, user_details)
-
+    return self.get_product_page(product_summary, user_details)
+    # self.get_product_page(product_summary, user_details)
     # purchase = pool.apply_async(self.get_product_page, args=(product_summary, user_details))
     # return multiprocessing.cpu_count()
 
@@ -73,13 +70,14 @@ class Eastbay:
     # driver = webdriver.Chrome('./chromedriver.exe', options=option)
     # print('Chrome Initialized with options')
 
-    driver = webdriver.Chrome('./chromedriver.exe')
+    driver = webdriver.Firefox()
+    # driver = webdriver.Chrome('./chromedriver.exe')
     # driver = webdriver.Chrome(ChromeDriverManager().install())
     print('Chrome Initialized')
     
     driver.get(url)
     print('Got Url')
-    wait = WebDriverWait(driver, 40)
+    wait = WebDriverWait(driver, 20)
     print('Wait Initialized')
 
     def close_modal():
@@ -133,15 +131,6 @@ class Eastbay:
     for null in range(10):
       get_page_running()
 
-
-    # time.sleep(50)
-
-
-    #driver.switch_to.default_content()
-    #all_frames = driver.find_elements_by_tag_name('iframe')
-    #print('Frames @ (Audio) Length', len(all_frames))
-
-
     close_all_modals()
 
     # size = wait.until(EC.presence_of_element_located((By.XPATH, "//div[@class='c-form-field c-form-field--radio ProductSize']/label/span[text()='09.5']")))
@@ -151,8 +140,9 @@ class Eastbay:
 
     close_all_modals()
 
-    qty = wait.until(EC.presence_of_element_located((By.ID, "input_tel_quantity")))
-    qty.send_keys(Keys.BACKSPACE)
+    # qty = wait.until(EC.presence_of_element_located((By.ID, "input_tel_quantity")))
+    qty = driver.find_element_by_id('tel_quantity')
+    qty.send_keys(Keys.BACKSPACE * 3)
     qty.send_keys(quantity)
     print('Quntity Typed')
 
@@ -179,28 +169,12 @@ class Eastbay:
     view_cart.click()
     print('Cart Viewed')
 
-    #time.sleep(5)
-
-
     close_all_modals()
-
 
     # checkout = driver.find_element_by_xpath("//div/a[text()='Guest Checkout']")
     checkout = wait.until(EC.presence_of_element_located((By.XPATH, "//div/a[text()='Guest Checkout']")))
     checkout.click()
     print('Checked Out')
-
-
-
-
-
-    # user_details = {'first_name': 'Zerubabel', 'last_name': 'Baah', 'address': '2046 Nicklaus circle',
-    # 'city': 'Roseville', 'state': 'California', 'zipcode': '95678', 'phone': '+16145564480',
-    # 'email': 'lemuelzerubbabelbaah@gmail.com'
-    # }
-
-    # state_name = user_details['state']
-
 
     time.sleep(1)
     wait.until(EC.presence_of_element_located((By.NAME, 'firstName'))).send_keys(user_details['first_name'])
@@ -232,35 +206,32 @@ class Eastbay:
     print('Save and Continue Clicked')
 
     close_all_modals()
+    
+    try:
+      elements = wait.until(EC.presence_of_element_located((By.CLASS_NAME, "Field col Adyen-cardNumber")))
+      print(elements)
+    except:
+      print('Not found')
+      
+    driver.switch_to.default_content()
+    all_frames = driver.find_elements_by_tag_name('iframe')
 
-    # time.sleep(1)
-    wait.until(EC.presence_of_element_located((By.ID, "encryptedExpiryMonth"))).send_keys(user_details['card_expiry'].split(' / ', 0))
-    time.sleep(0.3)
-    wait.until(EC.presence_of_element_located((By.ID, "encryptedCardNumber"))).send_keys(user_details['card_number'])
-    time.sleep(0.3)
-    driver.find_element_by_id('encryptedExpiryYear').send_keys(user_details['card_expiry'].split(' / ', 1))
-    time.sleep(0.3)
-    driver.find_element_by_id('encryptedSecurityCode').send_keys(user_details['card_cvv'])
-    time.sleep(0.3)
+    def fill_card_details(identity, value):
+      for x in range(len(all_frames)):
+        driver.switch_to.default_content()
+        driver.switch_to.frame(all_frames[x])
+        try:
+          driver.find_element_by_id(identity).send_keys(value)
+        except:
+          print('Inner')
 
-    print('Review and Pay Clicked')
+    fill_card_details('encryptedCardNumber', user_details['card_number'])
+    fill_card_details('encryptedExpiryMonth', user_details['card_expiry'].split(' / ', 1)[0])
+    fill_card_details('encryptedExpiryYear', user_details['card_expiry'].split(' / ', 1)[1])
+    fill_card_details('encryptedSecurityCode', user_details['card_cvv'])
 
-    place_order = wait.until(EC.presence_of_element_located((By.XPATH, "//button[text()='Place Order']")))
-    place_order.click()
-
-    print('Place Order Clicked')
-
-    # review_and_pay = driver.find_element_by_xpath("//button/span[(text()='Review and Pay')]")
-    # review_and_pay = wait.until(EC.presence_of_element_located((By.XPATH, "//button/span[(text()='Review and Pay')]")))
-    # review_and_pay.click()
-    time.sleep(3000)
-
-    # time.sleep(0.3)
-    # wait.until(EC.presence_of_element_located((By.NAME, 'card.cvv'))).send_keys(user_details['last_name'])
-    #
-    # addtobag = driver.find_element_by_xpath("//button[@class='gl-cta gl-cta--primary gl-cta--full-width']")
-    # addtobag.click()
-    # print('Added to Bag')
-
-    # return return_message
-    # return 'No Message'
+    # place_order = wait.until(EC.presence_of_element_located((By.XPATH, "//button[text()='Place Order']")))
+    # place_order.click()
+    # print('Place Order Clicked')
+    # time.sleep(3000)
+    return {'success': True, 'message': 'Ordered'}
