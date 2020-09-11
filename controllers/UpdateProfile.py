@@ -23,3 +23,7 @@ class UpdateProfile(Resource):
         db.session.commit()
         profile = profile_schema.dump(fetched_profile)
         return make_response(jsonify({'success': True, 'profile': profile}), 201)
+      else:
+        return make_response(jsonify({'success': False, 'message': 'Your request data must be jsonified'}))
+    else:
+      return make_response(jsonify({'success': False, 'message': 'Your request header must be put'}))

@@ -12,9 +12,14 @@ class AddTask(Resource):
         prod_size = request.json['productsize']
         prod_qty = request.json['productquantity']
         profile = request.json['profile']
+        status = request.json['status']
 
-        new_task = Task(user, website, prod_name, prod_number, prod_size, prod_qty, profile)
+        new_task = Task(user, website, prod_name, prod_number, prod_size, prod_qty, profile, status)
         db.session.add(new_task)
         db.session.commit()
         data = {'success': True , 'schema': task_schema.dump(new_task)}
         return make_response(jsonify(data), 201)
+      else:
+        return make_response(jsonify({'success': False, 'message': 'Your request data must be jsonified'}))
+    else:
+      return make_response(jsonify({'success': False, 'message': 'Your request header must be put'}))

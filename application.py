@@ -33,6 +33,7 @@ from controllers.Register import Register
 from controllers.Login import Login
 from controllers.AddProfile import AddProfile
 from controllers.AddTask import AddTask
+from controllers.UpdateTask import UpdateTask
 from controllers.DeleteTask import DeleteTask
 from controllers.UpdateProfile import UpdateProfile
 from controllers.DeleteProfile import DeleteProfile
@@ -45,6 +46,7 @@ api.add_resource(Register, '/register')
 api.add_resource(Login, '/login')
 api.add_resource(AddProfile, '/addprofile')
 api.add_resource(AddTask, '/addtask')
+api.add_resource(UpdateTask, '/updatetask/<string:id>')
 api.add_resource(DeleteTask, '/deletetask/<string:id>')
 api.add_resource(UpdateProfile, '/updateprofile/<string:id>')
 api.add_resource(DeleteProfile, '/deleteprofile/<string:id>')
