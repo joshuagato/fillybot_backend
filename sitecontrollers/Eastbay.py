@@ -142,7 +142,8 @@ class Eastbay:
 
     # qty = wait.until(EC.presence_of_element_located((By.ID, "input_tel_quantity")))
     qty = driver.find_element_by_id('tel_quantity')
-    qty.send_keys(Keys.BACKSPACE * 3)
+    qty.send_keys(Keys.BACKSPACE * 5)
+    qty.send_keys(Keys.DELETE * 5)
     qty.send_keys(quantity)
     print('Quntity Typed')
 
@@ -190,8 +191,6 @@ class Eastbay:
     driver.find_element_by_name('town').send_keys(user_details['city'])
     time.sleep(0.3)
     state = driver.find_element_by_xpath("//select/option[(text()='{}')]".format(state_name))
-    # state = driver.find_element_by_xpath("//select/option[contains(text(), '{}')]".format(state_name))
-    state.click()
     time.sleep(0.3)
     driver.find_element_by_name('phone').send_keys(user_details['phone'])
     time.sleep(0.3)
