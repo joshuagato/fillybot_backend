@@ -44,8 +44,8 @@ from controllers.PurchaseChampssports import PurchaseChampssports
 
 api.add_resource(Register, '/register')
 api.add_resource(Login, '/login')
-api.add_resource(AddProfile, '/addprofile')
 api.add_resource(AddTask, '/addtask')
+api.add_resource(AddProfile, '/addprofile')
 api.add_resource(UpdateTask, '/updatetask/<string:id>')
 api.add_resource(DeleteTask, '/deletetask/<string:id>')
 api.add_resource(UpdateProfile, '/updateprofile/<string:id>')
@@ -64,14 +64,14 @@ def hello_world():
 def get_profiles(id):
   all_profiles = Profile.query.filter_by(user=id).all()
   profiles = profiles_schema.dump(all_profiles)
-  return jsonify({ 'success': True, 'profiles': profiles }), 200
+  return jsonify({'success': True, 'profiles': profiles}), 200
 
 
 @app.route('/fetchallusertasks/<id>', methods=['GET'])
 def get_tasks(id):
   all_tasks = Task.query.filter_by(user=id).order_by(Task.id.desc()).all()
   tasks = tasks_schema.dump(all_tasks)
-  return jsonify({ 'success': True, 'tasks': tasks }), 200
+  return jsonify({'success': True, 'tasks': tasks}), 200
 
 
 if __name__  == "__main__":

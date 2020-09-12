@@ -14,28 +14,28 @@ from selenium.webdriver.common.keys import Keys
 
 pool = Pool(10)
 
-# header = randomheaders.LoadHeader()
-
 proxies = {
   'http': '37.48.118.98:13012',
   'https': '37.48.118.98:13012',
 }
 
-# options = Options()
-# options.add_argument("--headless")
+user_agent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.50 Safari/537.36'
 
-# option = webdriver.ChromeOptions()
-# option.add_argument('headless')
 
-# options = Options()
-# options.add_argument("--headless")
-# options.add_argument("window-size=1400,1500")
-# options.add_argument("--disable-gpu")
-# options.add_argument("--no-sandbox")
-# options.add_argument("start-maximized")
-# options.add_argument("enable-automation")
-# options.add_argument("--disable-infobars")
-# options.add_argument("--disable-dev-shm-usage")
+chrome_options = webdriver.ChromeOptions()
+chrome_options.add_argument("--window-size=1920,1080")
+chrome_options.add_argument("--disable-extensions")
+chrome_options.add_argument("--proxy-server='direct://'")
+chrome_options.add_argument("--proxy-bypass-list=*")
+chrome_options.add_argument("--start-maximized")
+chrome_options.add_argument('--headless')
+chrome_options.add_argument('--disable-gpu')
+chrome_options.add_argument('--disable-dev-shm-usage')
+chrome_options.add_argument('--no-sandbox')
+chrome_options.add_argument('--ignore-certificate-errors')
+chrome_options.add_argument('--allow-running-insecure-content')
+chrome_options.add_argument('--allow-insecure-localhost')
+chrome_options.add_argument(f'user-agent={user_agent}')
 
 
 class Footlocker:
@@ -59,26 +59,29 @@ class Footlocker:
 
 
   def get_product_page(self, product_summary, user_details):
-    # return_message = ''
     url = product_summary.get('url')
     size = product_summary.get('size')
     quantity = product_summary.get('quantity')
     state_name = user_details['state']
 
-    # driver = webdriver.Chrome('./chromedriver.exe', options=options)
-
-    # driver = webdriver.Chrome('./chromedriver.exe', options=option)
-    # print('Chrome Initialized with options')
-
-    driver = webdriver.Firefox()
-    # driver = webdriver.Chrome('./chromedriver.exe')
+    # driver = webdriver.Firefox(options=options)
+    # driver = webdriver.Firefox(firefox_options=options )
+    # driver = webdriver.Chrome(options=chrome_options)
+    driver = webdriver.Chrome()
     # driver = webdriver.Chrome(ChromeDriverManager().install())
     print('Chrome Initialized')
+    
+    driver.get(url)
+    print('Got Url')
+    driver.get_screenshot_as_file("screenshot1.png")
+    wait = WebDriverWait(driver, 20)
+    print('Wait Initialized')
       
     driver.get(url)
     print('Got Url')
     wait = WebDriverWait(driver, 20)
     print('Wait Initialized')
+    driver.get_screenshot_as_file("screenshots/footlocker/screenshot1.png")
 
     def close_modal():
       try:
@@ -160,6 +163,7 @@ class Footlocker:
     addtocart = wait.until(EC.presence_of_element_located((By.XPATH, "//button[@class='Button ProductDetails-form__action']")))
     addtocart.click()
     print('Added to Cart')
+    driver.get_screenshot_as_file("screenshots/footlocker/screenshot2.png")
 
     force_page_to_run()
     close_all_modals()
@@ -174,7 +178,8 @@ class Footlocker:
     # checkout = driver.find_element_by_xpath("//div/a[text()='Guest Checkout']")
     checkout = wait.until(EC.presence_of_element_located((By.XPATH, "//div/a[text()='Guest Checkout']")))
     checkout.click()
-    print('Checked Out')    
+    print('Checked Out')
+    driver.get_screenshot_as_file("screenshots/footlocker/screenshot3.png")
     
     time.sleep(1)
     wait.until(EC.presence_of_element_located((By.NAME, 'firstName'))).send_keys(user_details['first_name'])
@@ -202,6 +207,7 @@ class Footlocker:
     save_and_continue = driver.find_element_by_xpath("//div/button[(text()='Save & Continue')]")
     save_and_continue.click()
     print('Save and Continue Clicked')
+    driver.get_screenshot_as_file("screenshots/footlocker/screenshot4.png")
     
     close_all_modals()
     
@@ -232,4 +238,6 @@ class Footlocker:
     # place_order.click()
     # print('Place Order Clicked')
     # time.sleep(3000)
+    driver.get_screenshot_as_file("screenshots/footlocker/screenshot5.png")
+    driver.quit()
     return {'success': True, 'message': 'Ordered'}

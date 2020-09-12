@@ -4500,3 +4500,150 @@ webdriverClickElement@chrome://marionette/content/interaction.js:182:31
 
 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
 
+1599829442987	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\JOSH\\AppData\\Local\\Temp\\rust_mozprofile32QtRh"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1599829458497	Marionette	INFO	Listening on port 49722
+1599829459106	Marionette	WARN	TLS certificate errors will be ignored for this session
+1599829584696	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:245:13
+TimedPromise@chrome://marionette/content/sync.js:230:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:416:10
+webdriverClickElement@chrome://marionette/content/interaction.js:182:31
+1599829589538	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:245:13
+TimedPromise@chrome://marionette/content/sync.js:230:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:416:10
+webdriverClickElement@chrome://marionette/content/interaction.js:182:31
+1599829645737	Marionette	INFO	Stopped listening on port 49722
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+[Parent 3344, Gecko_IOThread] WARNING: pipe error: 232: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 545
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1599832219925	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\JOSH\\AppData\\Local\\Temp\\rust_mozprofilepbRDtt"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1599832227147	Marionette	INFO	Listening on port 57566
+1599832227369	Marionette	WARN	TLS certificate errors will be ignored for this session
+console.error: Region.jsm: "Error fetching region" (new AbortError("The operation was aborted. ", (void 0), 689))
+console.error: Region.jsm: "Failed to fetch region" (new Error("NO_RESULT", "resource://gre/modules/Region.jsm", 343))
+JavaScript warning: https://www.champssports.com/product/nike-air-max-plus/U4864001.html line 6 > injectedScript, line 13: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://www.champssports.com/product/nike-air-max-plus/U4864001.html line 6 > injectedScript, line 13: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://www.champssports.com/product/nike-air-max-plus/U4864001.html line 6 > injectedScript, line 13: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://www.champssports.com/product/nike-air-max-plus/U4864001.html line 6 > injectedScript, line 13: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://www.champssports.com/static/4ec6a08af2ati175ffc42fb8ca8a5f878, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://www.champssports.com/static/4ec6a08af2ati175ffc42fb8ca8a5f878, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: Error: /api/v3/session?timestamp=1599832292730 could not parse JSON
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: t is undefined
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: Error: /api/v3/session?timestamp=1599832292786 could not parse JSON
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: t is undefined
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\JOSH\\AppData\\Local\\Temp\\rust_mozprofileF2WcAV"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1599832637079	Marionette	INFO	Listening on port 58469
+1599832637762	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://www.champssports.com/product/nike-air-max-plus/U4864001.html line 6 > injectedScript, line 13: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://www.champssports.com/product/nike-air-max-plus/U4864001.html line 6 > injectedScript, line 13: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://www.champssports.com/product/nike-air-max-plus/U4864001.html line 6 > injectedScript, line 13: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://www.champssports.com/product/nike-air-max-plus/U4864001.html line 6 > injectedScript, line 13: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://www.champssports.com/static/4ec6a08af2ati175ffc42fb8ca8a5f878, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://www.champssports.com/static/4ec6a08af2ati175ffc42fb8ca8a5f878, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: Error: /api/v3/session?timestamp=1599832702197 could not parse JSON
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: t is undefined
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: Error: /api/v3/session?timestamp=1599832702253 could not parse JSON
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: t is undefined
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+Exiting due to channel error.
+irefox\\firefox.exe" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\JOSH\\AppData\\Local\\Temp\\rust_mozprofileCsTOt6"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1599832955883	Marionette	INFO	Listening on port 59055
+1599832956449	Marionette	WARN	TLS certificate errors will be ignored for this session
+console.error: services.settings: 
+  main/messaging-experiments Signature failed  TypeError: NetworkError when attempting to fetch resource.
+console.error: services.settings: 
+  main/message-groups Signature failed  TypeError: NetworkError when attempting to fetch resource.
+JavaScript warning: https://www.champssports.com/product/nike-air-max-plus/U4864001.html line 6 > injectedScript, line 13: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://www.champssports.com/product/nike-air-max-plus/U4864001.html line 6 > injectedScript, line 13: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://www.champssports.com/product/nike-air-max-plus/U4864001.html line 6 > injectedScript, line 13: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://www.champssports.com/product/nike-air-max-plus/U4864001.html line 6 > injectedScript, line 13: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://www.champssports.com/static/4ec6a08af2ati175ffc42fb8ca8a5f878, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://www.champssports.com/static/4ec6a08af2ati175ffc42fb8ca8a5f878, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: Error: /api/v3/session?timestamp=1599833064533 could not parse JSON
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: t is undefined
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: Error: /api/v3/session?timestamp=1599833064605 could not parse JSON
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: t is undefined
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/built/104/1.client.js, line 1: TypeError: e.setAttribute is not a function
+JavaScript error: https://www.champssports.com/product/nike-air-max-plus/U4864001.html line 6 > injectedScript, line 2: TypeError: dctfl.facebook is undefined
+JavaScript error: https://www.champssports.com/product/nike-air-max-plus/U4864001.html line 6 > injectedScript, line 2: TypeError: dctfl.google is undefined
+JavaScript error: https://www.champssports.com/product/nike-air-max-plus/U4864001.html line 6 > injectedScript, line 2: TypeError: dctfl.twitter is undefined
+JavaScript error: https://www.champssports.com/product/nike-air-max-plus/U4864001.html line 6 > injectedScript, line 2: TypeError: dctfl.pinterest is undefined
+JavaScript error: https://www.champssports.com/product/nike-air-max-plus/U4864001.html line 6 > injectedScript, line 2: TypeError: dctfl.snapchat is undefined
+JavaScript error: https://www.champssports.com/product/nike-air-max-plus/U4864001.html line 6 > injectedScript, line 2: TypeError: dctfl.digitalRemedy is undefined
+JavaScript error: https://insight.adsrvr.org/track/up?adv=e13odyo&ref=https%3A%2F%2Fwww.champssports.com%2Fproduct%2Fnike-air-max-plus%2FU4864001.html&upid=fm9xuoy&upv=1.1.0, line 10: ReferenceError: TTDCM is not defined
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+Exiting due to channel error.
+Exiting due to channel error.

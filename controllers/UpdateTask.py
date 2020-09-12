@@ -2,10 +2,13 @@ from utilities.flask_configs import Resource, db, request, jsonify, make_respons
 from models.task_model import Task, task_schema, tasks_schema
 
 class UpdateTask(Resource):
-  def post(self):
+  def put(self, id):
+    fetched_task = Task.query.get(id)
+    if not fetched_task:
+      return make_response(jsonify({'success': False, 'messgae': 'Task not found'}), 401)
+
     if request.method == 'PUT':
       if request.is_json:
-        fetched_task = Task.query.get(id)
         fetched_task.user = request.json['user'] if request.json['user'] else fetched_task.user
         fetched_task.website = request.json['productsite'] if request.json['productsite'] else fetched_task.website
         fetched_task.prod_name = request.json['productname'] if request.json['productname'] else fetched_task.prod_name
