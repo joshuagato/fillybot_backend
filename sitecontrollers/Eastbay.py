@@ -144,12 +144,12 @@ class Eastbay:
     qty.send_keys(quantity)
     print('Quntity Typed')
 
-    try:
-      size_again = driver.find_element_by_xpath.click("//div[@class='c-form-field c-form-field--radio ProductSize']/label/span[text()='{}']".format(size))
-      size_again.click()
-      print('Size Selected Again')
-    except:
-      print('NO: Size Selected Again')
+    # try:
+    #   size_again = driver.find_element_by_xpath.click("//div[@class='c-form-field c-form-field--radio ProductSize']/label/span[text()='{}']".format(size))
+    #   size_again.click()
+    #   print('Size Selected Again')
+    # except:
+    #   print('NO: Size Selected Again')
 
 
     close_all_modals()
@@ -229,9 +229,9 @@ class Eastbay:
     fill_card_details('encryptedExpiryYear', user_details['card_expiry'].split(' / ', 1)[1])
     fill_card_details('encryptedSecurityCode', user_details['card_cvv'])
 
-    # place_order = wait.until(EC.presence_of_element_located((By.XPATH, "//button[text()='Place Order']")))
-    # place_order.click()
-    # print('Place Order Clicked')
+    place_order = wait.until(EC.presence_of_element_located((By.XPATH, "//button[text()='Place Order']")))
+    place_order.click()
+    print('Place Order Clicked')
     # time.sleep(3000)
     driver.get_screenshot_as_file("screenshots/eastbay/screenshot5.png")
     driver.quit()

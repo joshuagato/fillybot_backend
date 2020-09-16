@@ -234,9 +234,9 @@ class Footlocker:
     fill_card_details('encryptedExpiryYear', user_details['card_expiry'].split(' / ', 1)[1])
     fill_card_details('encryptedSecurityCode', user_details['card_cvv'])
 
-    # place_order = wait.until(EC.presence_of_element_located((By.XPATH, "//button[text()='Place Order']")))
-    # place_order.click()
-    # print('Place Order Clicked')
+    place_order = wait.until(EC.presence_of_element_located((By.XPATH, "//button[text()='Place Order']")))
+    place_order.click()
+    print('Place Order Clicked')
     # time.sleep(3000)
     driver.get_screenshot_as_file("screenshots/footlocker/screenshot5.png")
     driver.quit()
