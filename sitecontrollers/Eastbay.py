@@ -73,6 +73,7 @@ class Eastbay:
     
     driver.get(url)
     print('Got Url')
+    
     wait = WebDriverWait(driver, 20)
     print('Wait Initialized')
     driver.get_screenshot_as_file("screenshots/eastbay/screenshot1.png")
