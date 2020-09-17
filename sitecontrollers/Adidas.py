@@ -11,6 +11,7 @@ from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 # from webdriver_manager.utils import ChromeType
 from selenium.webdriver.common.keys import Keys
+from utilities.partial_update_task import partial_update_task
 
 pool = Pool(10)
 
@@ -41,7 +42,7 @@ proxies = {
 class Adidas:
   """docstring for Adisas."""
 
-  def generate_url(self, product_details, user_details):
+  def generate_url(self, product_details, user_details, taskId):
     product_name = product_details.get('product_name').lower().replace(' ', '-').replace('_', '-')
 
     derived_url = 'https://www.adidas.com/us/' + product_name + '/' + product_details['product_number'] + '.html'
@@ -51,15 +52,13 @@ class Adidas:
     product_summary = {
       'url': derived_url, 'size': product_size, 'quantity': product_quantity
     }
-
-    # return self.get_product_page(product_summary, user_details)
-    self.get_product_page(product_summary, user_details)
-
+    
+    return self.get_product_page(product_summary, user_details, taskId)
     # purchase = pool.apply_async(self.get_product_page, args=(product_summary, user_details))
     # return multiprocessing.cpu_count()
 
 
-  def get_product_page(self, product_summary, user_details):
+  def get_product_page(self, product_summary, user_details, taskId):
     # return_message = ''
     url = product_summary.get('url')
     size = product_summary.get('size')

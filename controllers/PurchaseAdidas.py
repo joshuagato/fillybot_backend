@@ -21,6 +21,8 @@ class PurchaseAdidas(Resource):
           'card_expiry': request.json['card_expiry'], 'card_cvv': request.json['card_cvv'],
         }
 
-        message = adidas.generate_url(product_details, user_details)
+        taskId = request.json['taskId']
+
+        message = adidas.generate_url(product_details, user_details, taskId)
         response = {'message': message}
         return jsonify(response), 200

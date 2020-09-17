@@ -21,5 +21,7 @@ class PurchaseFootlocker(Resource):
           'card_expiry': request.json['card_expiry'], 'card_cvv': request.json['card_cvv'],
         }
 
-        response = footlocker.generate_url(product_details, user_details)
+        taskId = request.json['taskId']
+
+        response = footlocker.generate_url(product_details, user_details, taskId)
         return make_response(jsonify(response), 200)

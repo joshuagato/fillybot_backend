@@ -11,6 +11,7 @@ from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 # from webdriver_manager.utils import ChromeType
 from selenium.webdriver.common.keys import Keys
+from utilities.partial_update_task import partial_update_task
 
 pool = Pool(10)
 
@@ -41,7 +42,7 @@ chrome_options.add_argument(f'user-agent={user_agent}')
 class Eastbay:
   """docstring for Eastbay."""
   
-  def generate_url(self, product_details, user_details):
+  def generate_url(self, product_details, user_details, taskId):
     product_name = product_details.get('product_name').lower().replace("'", '').replace(' ', '-').replace('_', '-')
 
     derived_url = 'https://www.eastbay.com/product/' + product_name + '/' + product_details['product_number'] + '.html'
@@ -52,13 +53,12 @@ class Eastbay:
       'url': derived_url, 'size': product_size, 'quantity': product_quantity
     }
 
-    return self.get_product_page(product_summary, user_details)
-    # self.get_product_page(product_summary, user_details)
+    return self.get_product_page(product_summary, user_details, taskId)
     # purchase = pool.apply_async(self.get_product_page, args=(product_summary, user_details))
     # return multiprocessing.cpu_count()
 
 
-  def get_product_page(self, product_summary, user_details):
+  def get_product_page(self, product_summary, user_details, taskId):
     url = product_summary.get('url')
     size = product_summary.get('size')
     quantity = product_summary.get('quantity')
@@ -232,7 +232,8 @@ class Eastbay:
     place_order = wait.until(EC.presence_of_element_located((By.XPATH, "//button[text()='Place Order']")))
     place_order.click()
     print('Place Order Clicked')
-    # time.sleep(3000)
+
+    partial_update_task(taskId, 'Ordered')
     driver.get_screenshot_as_file("screenshots/eastbay/screenshot5.png")
     driver.quit()
     return {'success': True, 'message': 'Ordered'}

@@ -19,7 +19,6 @@ class UpdateProfile(Resource):
         fetched_profile.zipcode = request.json['zipcode']
         fetched_profile.phone = request.json['phone']
         fetched_profile.email = request.json['email']
-
         db.session.commit()
         profile = profile_schema.dump(fetched_profile)
         return make_response(jsonify({'success': True, 'profile': profile}), 201)

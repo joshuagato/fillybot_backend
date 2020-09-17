@@ -3,31 +3,16 @@ from flask_cors import CORS
 
 import pymysql
 from sqlalchemy import desc
-
 pymysql.install_as_MySQLdb()
-
-from sitecontrollers.Adidas import Adidas
-from sitecontrollers.Eastbay import Eastbay
-from sitecontrollers.Footlocker import Footlocker
-from sitecontrollers.Champssports import Champssports
 
 from models.profile_model import Profile, profile_schema, profiles_schema
 from models.task_model import Task, task_schema, tasks_schema
 from models.user_model import User, users_schema, users_schema
 
-CORS(app)
-
-api = Api(app)
-
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:@localhost/fillybot'
-# app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:hams4444@sneakerbot.ciiwjmf6az4h.us-west-2.rds.amazonaws.com/fillybot'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-
-db.create_all()
-# adidas = Adidas()
-# eastbay = Eastbay()
-# footlocker = Footlocker()
-# champssports = Champssports()
+from sitecontrollers.Adidas import Adidas
+from sitecontrollers.Eastbay import Eastbay
+from sitecontrollers.Footlocker import Footlocker
+from sitecontrollers.Champssports import Champssports
 
 from controllers.Register import Register
 from controllers.Login import Login
@@ -41,6 +26,17 @@ from controllers.PurchaseAdidas import PurchaseAdidas
 from controllers.PurchaseEastbay import PurchaseEastbay
 from controllers.PurchaseFootlocker import PurchaseFootlocker
 from controllers.PurchaseChampssports import PurchaseChampssports
+
+CORS(app)
+
+api = Api(app)
+
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:@localhost/fillybot'
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:hams4444@sneakerbot.ciiwjmf6az4h.us-west-2.rds.amazonaws.com/fillybot'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+db.create_all()
+
 
 api.add_resource(Register, '/register')
 api.add_resource(Login, '/login')
@@ -57,7 +53,7 @@ api.add_resource(PurchaseChampssports, '/champssports')
 
 @app.route('/', methods=['GET'])
 def hello_world():
-  return "Hello World!"
+  return "Fillybot welcomes you"
 
 
 @app.route('/fetchalluserprofiles/<id>', methods=['GET'])
