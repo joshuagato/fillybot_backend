@@ -56,10 +56,8 @@ class Footlocker:
     print('Wait Initialized')
     driver.get_screenshot_as_file("screenshots/footlocker/screenshot1.png")
 
-    
     get_page_running(driver)
     get_page_running_despite(driver)
-
 
     close_modal(driver)
     close_stylish_modal(driver)
