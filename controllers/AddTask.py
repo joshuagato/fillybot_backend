@@ -1,6 +1,6 @@
 from utilities.flask_configs import Resource, db, request, jsonify, make_response
 from models.task_model import Task, task_schema, tasks_schema
-
+# Controller for adding task
 class AddTask(Resource):
   def post(self):
     if request.method == 'POST':
